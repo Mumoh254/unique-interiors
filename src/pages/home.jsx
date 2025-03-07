@@ -15,7 +15,7 @@ const Home = () => {
       <div className="home-container">
         <div className="video-overlay"></div>
         <video autoPlay loop muted playsInline className="background-video">
-          <source src="/videos/0306 (1)(1).mp4" type="video/mp4" />
+          <source src="/videos/comp.mp4" type="video/mp4" />
         </video>
 
         <div className="content-overlay">
