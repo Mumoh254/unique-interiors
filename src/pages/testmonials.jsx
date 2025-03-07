@@ -1,53 +1,42 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./Testimonials.css";
 
 const testimonials = [
   {
     id: 1,
-    text: "Well done immersion team",
-    author: "Tatiana Petrov",
+    name: ".. Welt  Tallis  ",
+    feedback: "Great service! My experience was smooth and professional.",
   },
   {
     id: 2,
-    text: "Bunch of excellent professionals, keeping note of each detail and taking care of that during execution is exceptional...",
-    author: "Rob M",
+    name: ".. Jayden",
+    feedback: "Highly recommend! Quick response and excellent customer care.",
   },
   {
     id: 3,
-    text: "They delivered the office before time, I was able to start operation before the due date, indirectly helped in saving my rent",
-    author: "James Thores",
+    name: ".. Peter",
+    feedback: "Best experience ever! Reliable and efficient service.",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="testimonials-section sc  py-4 ">
-      <Container>
-        <h2 className=" btn text-center mb-4  ">What Our Clients Say</h2>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
+    <section className="py-5 bg-light">
+      <div className="container text-start">
+        <h2 className="mb-4 fw-bold">What Clients Say About Us</h2>
+        <div className="row justify-content-center">
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="testimonial-card card">
-                <p className="testimonial-text">{testimonial.text}</p>
-                <div className="testimonial-author">{testimonial.author}</div>
-                <div className="triangle"></div>
+            <div key={testimonial.id} className="col-md-4 mb-4">
+              <div className="position-relative p-4 bg-white rounded shadow-sm text-start">
+                <p className="text-muted fw-bold ">"{testimonial.feedback}"</p>
+                <p className="fw-bold text-dark mb-0">- {testimonial.name}</p>
+                {/* Chat bubble tail */}
+                <div className="bg position-absolute bottom-0 start-0 translate-middle  shadow-sm rounded-circle p-2"></div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 };

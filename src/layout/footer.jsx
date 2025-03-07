@@ -8,11 +8,11 @@ const Footer = () => {
       <div className="footer-content">
         {/* Contact Section */}
         <div className="footer-section">
-          <h4>Hesebeck Home Company</h4>
+          <h4>Unique  Interiors  LTD </h4>
           <address className="contact-info">
             <p><FaMapMarkerAlt /> Kenya     ,   Nairobi </p>
             <p>Tel: <a href="tel:+254710772575">+254710772575</a></p>
-            <p>Email: <a href="mailto:info@hesebeck.de">info@hesebeck.de</a></p>
+            <p>Email: <a href="mailto:info@hesebeck.de">uniqueinteriors@gmail.com</a></p>
           </address>
           <div className="map-container">
             <iframe 
@@ -71,7 +71,7 @@ const Footer = () => {
 
 
         </div>
-        <p>© {new Date().getFullYear()} Unique   Interiors   | All rights reserved  |  otherwise  |   protected   by  welt tallis </p>
+        <p>© {new Date().getFullYear()} Unique   Interiors limited ..  | All rights reserved  |  Unauthorized duplication or distribution is prohibited .  </p>
       </div>
     </footer>
   );

@@ -1,14 +1,12 @@
-// Header.jsx
 import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar bg="light" expand="lg" fixed="top" expanded={isOpen}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -20,6 +18,7 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle 
           aria-controls="basic-navbar-nav" 
+          aria-expanded={isOpen} 
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>
@@ -28,12 +27,12 @@ const Header = () => {
             <span></span>
           </div>
         </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav" className={isOpen ? 'show' : ''}>
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
-            <Nav.Link as={Link} to="/process">Process</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={() => setIsOpen(false)}>About</Nav.Link>
+            <Nav.Link as={Link} to="/projects" onClick={() => setIsOpen(false)}>Projects</Nav.Link>
+            <Nav.Link as={Link} to="/process" onClick={() => setIsOpen(false)}>Process</Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={() => setIsOpen(false)}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -41,4 +40,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;

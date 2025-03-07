@@ -1,71 +1,228 @@
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { useState } from 'react';
+import { Container, Row, Col, Card, Button, Badge, ButtonGroup } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase/config';
+
+const projects = [
+  { 
+    id: 1,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen.png',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+  
+
+  { 
+    id: 2,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen7.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+  { 
+    id: 3,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen6.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+
+  { 
+    id: 4,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen5.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+  { 
+    id: 5,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen5.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+
+
+  { 
+    id: 6,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/mirror.jpg',
+    year: '2024',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+
+  { 
+    id: 7,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/wardrobe.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+
+
+
+  { 
+    id: 8,
+    category: 'Residential',
+    type: 'Renovation',
+    title: 'Modern Apartment Makeover',
+    image: '/images/kitchen4.jpg',
+    year: '2023',
+    excerpt: 'Complete transformation of a 3-bedroom apartment'
+  },
+
+  { 
+    id: 0,
+    category: 'Commercial',
+    type: 'Office',
+    title: 'Corporate Office Design',
+    image: '/images/kitchen3.jpg',
+    year: '2023',
+    excerpt: '2000 sq ft office space redesign'
+  },
+  // Add more projects...
+];
+
+const categories = ['All', 'Residential', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum'];
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const querySnapshot = await getDocs(collection(db, 'projects'));
-      setProjects(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    };
-    fetchProjects();
-  }, []);
+  const filteredProjects = selectedCategory === 'All' 
+    ? projects 
+    : projects.filter(project => 
+        project.category === selectedCategory || 
+        project.type === selectedCategory
+      );
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet>
-        <title>Our Projects - Unique Interios H</title>
-        <meta name="description" content="Explore our award-winning interior design projects" />
+        <title>Our Projects - Unique Interiors</title>
       </Helmet>
 
       <Container className="py-5">
-        <h1 className="display-4 mb-5">Our Portfolio</h1>
+        <h1 className="display-4 mb-5 text-center">Our Portfolio</h1>
         
-        <Row>
-          {projects.map((project, index) => (
-            <Col md={4} key={project.id} className="mb-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="card h-100 shadow"
+        <div className="mb-4 text-center">
+          <ButtonGroup>
+            {categories.map(cat => (
+              <Button
+                key={cat}
+                variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
+                onClick={() => setSelectedCategory(cat)}
+                className="m-1 rounded-pill"
               >
-                <img
-                  src={project.mainImage}
-                  className="card-img-top"
-                  alt={project.title}
-                />
-                <div className="card-body">
-                  <h3>{project.title}</h3>
-                  <div className="mb-2">
-                    <Badge bg="primary" className="me-2">
-                      {project.category}
-                    </Badge>
-                    <Badge bg="success">
-                      {project.year}
-                    </Badge>
+                {cat}
+              </Button>
+            ))}
+          </ButtonGroup>
+        </div>
+
+        <Row>
+          {filteredProjects.map((project) => (
+            <Col key={project.id} xs={12} md={6} lg={4} className="mb-4">
+              <motion.div 
+                whileHover={{ scale: 1.03 }}
+                className="h-100 shadow-lg rounded-3 overflow-hidden"
+              >
+                <Card className="h-100 border-0">
+                  <div className="image-container">
+                    <Card.Img 
+                      variant="top" 
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                    />
+                    <div className="image-overlay">
+                      <Badge bg="light" text="dark" className="mb-2">
+                        {project.year}
+                      </Badge>
+                    </div>
                   </div>
-                  <p>{project.excerpt}</p>
-                  <Button 
-                    variant="outline-primary"
-                    href={`/projects/${project.id}`}
-                  >
-                    View Case Study
-                  </Button>
-                </div>
-                <div className="card-footer">
-                  <small className="text-muted">
-                    {project.testimonials.length} Client Reviews
-                  </small>
-                </div>
+                  <Card.Body>
+                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Text>{project.excerpt}</Card.Text>
+                  
+                  </Card.Body>
+                  <Card.Footer className="text-muted">
+                    {project.category} • {project.type}
+                  </Card.Footer>
+                </Card>
               </motion.div>
             </Col>
           ))}
         </Row>
       </Container>
+
+      <style jsx>{`
+        .image-container {
+          position: relative;
+          overflow: hidden;
+          height: 250px;
+        }
+        
+        .project-image {
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+        
+        .image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0,0,0,0.3);
+          display: flex;
+          align-items: flex-end;
+          padding: 1rem;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        
+        .image-container:hover .image-overlay {
+          opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+          .image-container {
+            height: 200px;
+          }
+        }
+      `}</style>
     </motion.div>
   );
 }

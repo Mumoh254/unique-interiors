@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
@@ -6,13 +6,28 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import { db } from '../../public/functions/firebase';
-import { collection, addDoc } from 'firebase/firestore';
-import { FaUser, FaEnvelope, FaPhone, FaHome, FaPalette, FaClock, FaCalendarAlt } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { FaUser, FaEnvelope, FaPhone, FaHome, FaCalendarAlt, FaToolbox } from 'react-icons/fa';
 
+// Kenyan Counties List
+const kenyanCounties = [
+  'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta',
+  'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru',
+  'Tharaka-Nithi', 'Embu', 'Kitui', 'Machakos', 'Makueni', 'Nyandarua',
+  'Nyeri', 'Kirinyaga', 'Murang\'a', 'Kiambu', 'Turkana', 'West Pokot',
+  'Samburu', 'Trans-Nzoia', 'Uasin Gishu', 'Elgeyo-Marakwet', 'Nandi',
+  'Baringo', 'Laikipia', 'Nakuru', 'Narok', 'Kajiado', 'Kericho',
+  'Bomet', 'Kakamega', 'Vihiga', 'Bungoma', 'Busia', 'Siaya',
+  'Kisumu', 'Homa Bay', 'Migori', 'Kisii', 'Nyamira', 'Nairobi City'
+];
 
 const Consultation = () => {
+  useEffect(() => {
+    emailjs.init('FGBV3zSBJEQcNqihu'); // Your public key
+  }, []);
+
   const navigate = useNavigate();
+
   const timeSlots = [
     '8:00-9:00 AM', '9:00-10:00 AM', '10:00-11:00 AM', '11:00 AM-12:00 PM',
     '12:00-1:00 PM', '1:00-2:00 PM', '2:00-3:00 PM', '3:00-4:00 PM', '4:00-5:00 PM'
@@ -22,16 +37,10 @@ const Consultation = () => {
     name: '',
     email: '',
     phone: '',
-    contactMethod: 'email',
     projectType: 'residential',
-    address: '',
+    serviceCategory: 'renovation',
+    county: '',
     areaSize: '',
-    scope: 'renovation',
-    style: 'modern',
-    colorPalette: 'neutral',
-    materials: [],
-    budget: 'medium',
-    timeline: '1-3 Months',
     date: null,
     time: '',
     message: ''
@@ -41,26 +50,51 @@ const Consultation = () => {
     name: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.string().required('Required'),
-    address: Yup.string().required('Required'),
+    county: Yup.string().required('Required'),
     areaSize: Yup.number().required('Required'),
     date: Yup.date().required('Required'),
     time: Yup.string().required('Required'),
-    materials: Yup.array().min(1, 'Select at least one material')
+    projectType: Yup.string().required('Required'),
+    serviceCategory: Yup.string().required('Required')
   });
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      await addDoc(collection(db, 'consultations'), values);
-      Swal.fire({
-        title: 'Success!',
-        text: 'Consultation booked successfully',
-        icon: 'success',
-        confirmButtonText: 'Return Home',
-        confirmButtonColor: '#ff6b35'
-      }).then(() => navigate('/'));
+      const templateParams = {
+        ...values,
+        date: values.date ? values.date.toLocaleDateString() : 'Not selected',
+        fullRequest: JSON.stringify(values, null, 2)
+      };
+
+      console.log('Sending request with params:', templateParams);
+
+      const response = await emailjs.send(
+        'service_kortt7m',
+        'template_g5i570v',
+        templateParams
+      );
+
+      console.log('EmailJS response:', response);
+
+      if (response.status === 200) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Consultation request sent successfully',
+          icon: 'success',
+          confirmButtonText: 'Return Home',
+          confirmButtonColor: '#ff6b35'
+        }).then(() => navigate('/'));
+      }
+
       resetForm();
+
     } catch (error) {
-      Swal.fire('Error!', 'Submission failed. Please try again.', 'error');
+      console.error('EmailJS Error Details:', {
+        errorCode: error.status,
+        errorText: error.text,
+        fullError: error
+      });
+      Swal.fire('Error!', 'Failed to send request. Please try again.', 'error');
     }
   };
 
@@ -88,9 +122,12 @@ const Consultation = () => {
                   <Field name="email" type="email" placeholder="Email" />
                   <ErrorMessage name="email" component="div" className="error" />
                 </div>
+                <div className="form-group">
+                  <FaPhone className="input-icon" />
+                  <Field name="phone" placeholder="Phone Number" />
+                  <ErrorMessage name="phone" component="div" className="error" />
+                </div>
               </div>
-              
-              {/* Other fields... */}
             </div>
 
             {/* Project Details Section */}
@@ -98,14 +135,45 @@ const Consultation = () => {
               <h3><FaHome /> Project Details</h3>
               <div className="form-row">
                 <div className="form-group">
+                  <label>Property Type</label>
                   <Field as="select" name="projectType">
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
-                    <option value="office">Office</option>
-                    <option value="hotel">Hotel</option>
+                    <option value="office">Office Space</option>
+                    <option value="hotel">Hotel/Resort</option>
+                    <option value="retail">Retail Space</option>
                   </Field>
                 </div>
-                {/* More fields... */}
+
+                <div className="form-group">
+                  <label>Service Needed</label>
+                  <Field as="select" name="serviceCategory">
+                    <option value="renovation">Full Renovation</option>
+                    <option value="tiling">Floor Tiling</option>
+                    <option value="gypsum">Gypsum Ceiling</option>
+                    <option value="painting">Painting</option>
+                    <option value="furniture">Custom Furniture</option>
+                    <option value="lighting">Lighting Design</option>
+                    <option value="other">Other Services</option>
+                  </Field>
+                </div>
+
+                <div className="form-group">
+                  <label>County</label>
+                  <Field as="select" name="county">
+                    <option value="">Select County</option>
+                    {kenyanCounties.map(county => (
+                      <option key={county} value={county}>{county}</option>
+                    ))}
+                  </Field>
+                  <ErrorMessage name="county" component="div" className="error" />
+                </div>
+
+                <div className="form-group">
+                  <label>Area Size (sq ft)</label>
+                  <Field name="areaSize" type="number" />
+                  <ErrorMessage name="areaSize" component="div" className="error" />
+                </div>
               </div>
             </div>
 
@@ -121,6 +189,7 @@ const Consultation = () => {
                     placeholderText="Select Date"
                     className="date-picker"
                   />
+                  <ErrorMessage name="date" component="div" className="error" />
                 </div>
                 <div className="time-slots">
                   {timeSlots.map(slot => (
@@ -134,6 +203,19 @@ const Consultation = () => {
                     </button>
                   ))}
                 </div>
+                <ErrorMessage name="time" component="div" className="error" />
+              </div>
+            </div>
+
+            <div className="form-section">
+              <h3><FaToolbox /> Additional Details</h3>
+              <div className="form-group">
+                <Field 
+                  as="textarea" 
+                  name="message" 
+                  placeholder="Describe your project needs..." 
+                  rows={4}
+                />
               </div>
             </div>
 
