@@ -462,6 +462,9 @@ body{
 .consultation-container {
   max-width: 1000px;
 
+  margin: auto;
+  padding: 2rem;
+
 }
 
 
@@ -620,7 +623,7 @@ body{
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  background:  var(--dark-overlay)  !important ;
+  background:  var(--dark-overlay)   ;
   
 }
 
@@ -886,4 +889,45 @@ body{
 
 .bg{
   background-color: #f56217 !important;
+}
+
+
+
+/* Arrow Container */
+/* Arrow Container */
+.arrow-container {
+  z-index: 1;
+}
+
+/* Thin Horizontal Arrow Styling and Animation */
+.thin-arrow {
+  width: 150px; /* Length of the arrow */
+  height: 2px; /* Thickness of the arrow */
+  background-color: #0d6efd; /* Bootstrap primary color */
+  position: relative;
+  animation: arrowAnimation 1.5s infinite;
+}
+
+.thin-arrow::before {
+  content: '';
+  position: absolute;
+  right: -5px; /* Position the arrowhead at the end */
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg); /* Center and rotate the arrowhead */
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0d6efd;
+  border-right: 2px solid #0d6efd;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

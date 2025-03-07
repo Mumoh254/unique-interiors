@@ -132,7 +132,7 @@ export default function Projects() {
         <title>Our Projects - Unique Interiors</title>
       </Helmet>
 
-      <Container className="py-5">
+      <Container className="py-5 m-5 ">
         <h1 className="display-4 mb-5 text-center">Our Portfolio</h1>
         
         <div className="mb-4 text-center">

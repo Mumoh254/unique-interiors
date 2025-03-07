@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import WhatsAppWidget from '../widgets/watsapp';
 import Testimonials from './testmonials';
 import FAQ from './faq';
-
+import  ProjectTypes  from './types'
 
 const Home = () => {
   const navigate = useNavigate();
@@ -60,6 +60,8 @@ const Home = () => {
         </div>
         <WhatsAppWidget />
       </div>
+
+      <ProjectTypes  />
 
       <Testimonials />
       <FAQ />

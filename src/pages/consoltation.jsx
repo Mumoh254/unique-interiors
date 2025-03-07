@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import { FaUser, FaEnvelope, FaPhone, FaHome, FaCalendarAlt, FaToolbox } from 'react-icons/fa';
 
-// Kenyan Counties List
+// Kenyan Counties  array 
 const kenyanCounties = [
   'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta',
   'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru',
@@ -100,7 +100,7 @@ const Consultation = () => {
 
   return (
     <div className="consultation-container">
-      <h2 className="form-title">Design Consultation Request</h2>
+      <h2 className="form-title">Design Consultation Appointment</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
