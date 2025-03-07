@@ -894,16 +894,14 @@ body{
 
 
 /* Arrow Container */
-/* Arrow Container */
 .arrow-container {
   z-index: 1;
 }
 
-/* Thin Horizontal Arrow Styling and Animation */
 .thin-arrow {
-  width: 150px; /* Length of the arrow */
-  height: 2px; /* Thickness of the arrow */
-  background-color: #0d6efd; /* Bootstrap primary color */
+  width: 150px;
+  height: 2px;
+  background-color: #0d6efd; 
   position: relative;
   animation: arrowAnimation 1.5s infinite;
 }
@@ -911,9 +909,9 @@ body{
 .thin-arrow::before {
   content: '';
   position: absolute;
-  right: -5px; /* Position the arrowhead at the end */
+  right: -5px; 
   top: 50%;
-  transform: translateY(-50%) rotate(45deg); /* Center and rotate the arrowhead */
+  transform: translateY(-50%) rotate(45deg); 
   width: 10px;
   height: 10px;
   border-top: 2px solid #0d6efd;
@@ -930,4 +928,254 @@ body{
   100% {
     transform: translateX(0);
   }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+
+  .thin-arrow {
+    width: 60px !important;
+  }
+
+
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .thin-arrow {
+    width: 50px;
+  }
+
+ 
+  .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .arrow-container {
+    text-align: center;
+  }
+
+  .btn {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .thin-arrow {
+    width: 60px  ;
+  }
+
+  .btn {
+    padding: 0 !important;
+    font-size: 0.6rem  !important;
+    
+  }
+}
+
+
+
+
+/* footer   */
+
+/* Hero Section Before Footer */
+.hero-section {
+  background-image: url('/images/hero-bg.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Footer Container */
+
+
+/* Hero Section Before Footer */
+.hero-section {
+  height: 300px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Footer Container */
+.footer-container {
+
+  padding: 2rem 0;
+  color: #f8f9fa ;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 1rem;
+}
+
+.footer-section h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 150px;
+  border: none;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletter-form button {
+  padding: 0.5rem 1rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #0b5ed7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+
+  font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.legal-links {
+  margin-bottom: 1rem;
+}
+
+.legal-links a {
+  margin: 0 0.5rem;
+
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
 }
