@@ -21,7 +21,7 @@ const Header = () => {
           aria-expanded={isOpen} 
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className={`hamburger ${isOpen ? 'open' : ''}`}>
+          <div className={`hg  hamburger ${isOpen ? 'open' : ''}`}>
             <span></span>
             <span></span>
             <span></span>

@@ -136,7 +136,9 @@ const Consultation = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label>Property Type</label>
+          
                   <Field as="select" name="projectType">
+                
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
                     <option value="office">Office Space</option>
