@@ -8,7 +8,7 @@ const Footer = () => {
       <div 
         className="hero-section"
         style={{ 
-          backgroundImage: `url('/images/image.png')`, // Replace with your image path
+          backgroundImage: `url('/images/footer.png')`, // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
