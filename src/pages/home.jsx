@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import WhatsAppWidget from '../widgets/watsapp';
 import Testimonials from './testmonials';
 import FAQ from './faq';
-import  ProjectTypes  from './types'
+import ProjectTypes from './types';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -46,23 +46,29 @@ const Home = () => {
             transition={{ type: "spring", stiffness: 50, delay: 1.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bgc quote-btn" onClick={() => navigate('/quote')}>
+              <Button className="custom-btn quote-btn" onClick={() => navigate('/quote')}>
                 Get a Quote
               </Button>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bgc " onClick={() => navigate('/consultation')}>
+              <Button className="custom-btn" onClick={() => navigate('/consultation')}>
                 Book Consultation
               </Button>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Thin Arrow with "Explore More" Text */}
+        <div className="explore-more">
+          <span>Explore More</span>
+          <div className="thin-arrow"></div>
+        </div>
+
         <WhatsAppWidget />
       </div>
 
-      <ProjectTypes  />
-
+      <ProjectTypes />
       <Testimonials />
       <FAQ />
     </>

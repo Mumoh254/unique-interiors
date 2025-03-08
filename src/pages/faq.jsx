@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import { Container, Accordion, Button } from "react-bootstrap";
+import { Container, Accordion } from "react-bootstrap";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const FAQ = () => {
   const [activeKey, setActiveKey] = useState(null);
-
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   const faqs = [
     {
@@ -44,32 +38,34 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-5 bg-white">
-      <Container className="py-5">
-        <h2 className="text-start mb-5 display-5 fw-bold ">
+    <section className="faq-section">
+      <Container>
+        <h2 className="faq-heading text-start mb-5">
           Frequently Asked Questions
         </h2>
-        <Accordion activeKey={activeKey} style={{ maxWidth: '800px' }}>
+        <Accordion activeKey={activeKey} style={{ maxWidth: '800px', margin: '0 auto' }}>
           {faqs.map((faq, index) => (
             <Accordion.Item 
               key={index} 
               eventKey={index.toString()}
-              className="mb-3 border-0 rounded-3 shadow-sm"
+              className="faq-item"
             >
               <Accordion.Header 
                 onClick={() => setActiveKey(activeKey === index.toString() ? null : index.toString())}
-                className="p-3 "
+                className="faq-header"
               >
                 <div className="d-flex justify-content-between w-100 pe-3">
-                  <h5 className="mb-0 fw-bold text-dark">{faq.question}</h5>
-                  {activeKey === index.toString() ? 
-                    <FiChevronUp className="text-primary" /> : 
-                    <FiChevronDown className="text-primary" />
-                  }
+                  <h5>{faq.question}</h5>
+                  <span className="icon">
+                    {activeKey === index.toString() ? 
+                      <FiChevronUp /> : 
+                      <FiChevronDown />
+                    }
+                  </span>
                 </div>
               </Accordion.Header>
-              <Accordion.Body className="p-4 bg-white">
-                <p className="lead text-muted mb-0">{faq.answer}</p>
+              <Accordion.Body className="faq-body">
+                <p>{faq.answer}</p>
               </Accordion.Body>
             </Accordion.Item>
           ))}
