@@ -1249,3 +1249,34 @@ body{
 .arrow-container:hover .thin-arrow::after {
   right: -10px; /* Move arrow head on hover */
 }
+
+
+
+/* Custom CSS for Filter Buttons */
+.btn-group.flex-wrap {
+  gap: 0.5rem; /* Add gap between buttons */
+  max-width: 100%  !important;
+}
+
+.btn-outline-primary {
+  border-color: #0d6efd;
+  color: #0d6efd;
+  max-width: 70px  !important;
+  padding: 0.4rem !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+}

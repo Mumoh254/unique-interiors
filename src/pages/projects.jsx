@@ -13,8 +13,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-  
-
   { 
     id: 2,
     category: 'Residential',
@@ -24,9 +22,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
   { 
     id: 3,
     category: 'Residential',
@@ -36,10 +31,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
-
   { 
     id: 4,
     category: 'Residential',
@@ -49,9 +40,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
   { 
     id: 5,
     category: 'Residential',
@@ -61,11 +49,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
-
-
   { 
     id: 6,
     category: 'Residential',
@@ -75,10 +58,6 @@ const projects = [
     year: '2024',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
-
   { 
     id: 7,
     category: 'Residential',
@@ -88,10 +67,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
-
-
-
   { 
     id: 8,
     category: 'Residential',
@@ -101,7 +76,6 @@ const projects = [
     year: '2023',
     excerpt: 'Complete transformation of a 3-bedroom apartment'
   },
-
   { 
     id: 0,
     category: 'Commercial',
@@ -132,17 +106,19 @@ export default function Projects() {
         <title>Our Projects - Unique Interiors</title>
       </Helmet>
 
-      <Container className="py-5 m-5 ">
+      <Container className="py-5">
         <h1 className="display-4 mb-5 text-center">Our Portfolio</h1>
         
+        {/* Responsive Filter Navigation */}
         <div className="mb-4 text-center">
-          <ButtonGroup>
+          <ButtonGroup className="flex-wrap">
             {categories.map(cat => (
               <Button
                 key={cat}
                 variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
                 onClick={() => setSelectedCategory(cat)}
                 className="m-1 rounded-pill"
+                style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
               >
                 {cat}
               </Button>
@@ -174,7 +150,6 @@ export default function Projects() {
                   <Card.Body>
                     <Card.Title>{project.title}</Card.Title>
                     <Card.Text>{project.excerpt}</Card.Text>
-                  
                   </Card.Body>
                   <Card.Footer className="text-muted">
                     {project.category} • {project.type}
