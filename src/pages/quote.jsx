@@ -9,6 +9,10 @@ const Quote = () => {
     email: "",
     phone: "",
     projectType: "Residential",
+    length: "", // New field for length
+    width: "", // New field for width
+    height: "", // New field for height
+    timeline: "", // Timeline field
     details: "",
   });
 
@@ -39,13 +43,11 @@ const Quote = () => {
   };
 
   return (
-    <section className="py-5 bg-light">
+    <section className="quote-section">
       <Container className="py-5" style={{ maxWidth: "800px" }}>
-        <div className="text-center mb-5">
-          <h2 className="display-5 fw-bold text-primary mb-3">
-            Get a Free Quote
-          </h2>
-          <p className="lead text-muted">
+        <div className="text-start mb-5">
+          <h2 className="quote-heading">Get a Free Quote</h2>
+          <p className="quote-subtext">
             Complete this form and our design experts will contact you within 24 hours.
           </p>
         </div>
@@ -56,11 +58,11 @@ const Quote = () => {
             <p>Your request has been submitted. We'll contact you shortly.</p>
           </Alert>
         ) : (
-          <Form onSubmit={handleSubmit} className="card border-0 shadow p-4">
+          <Form onSubmit={handleSubmit} className="quote-form">
             <Row className="g-3">
               <Col md={6}>
                 <Form.Group controlId="formName">
-                  <Form.Label>Full Name</Form.Label>
+                  <Form.Label className="form-label">Full Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="name"
@@ -68,13 +70,12 @@ const Quote = () => {
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="rounded-pill"
                   />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group controlId="formEmail">
-                  <Form.Label>Email Address</Form.Label>
+                  <Form.Label className="form-label">Email Address</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
@@ -82,13 +83,12 @@ const Quote = () => {
                     onChange={handleChange}
                     required
                     placeholder="john@example.com"
-                    className="rounded-pill"
                   />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group controlId="formPhone">
-                  <Form.Label>Phone Number</Form.Label>
+                  <Form.Label className="form-label">Phone Number</Form.Label>
                   <Form.Control
                     type="tel"
                     name="phone"
@@ -96,18 +96,16 @@ const Quote = () => {
                     onChange={handleChange}
                     required
                     placeholder="+254 700 000 000"
-                    className="rounded-pill"
                   />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group controlId="formProjectType">
-                  <Form.Label>Project Type</Form.Label>
+                  <Form.Label className="form-label">Project Type</Form.Label>
                   <Form.Select
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="rounded-pill"
                   >
                     <option>Residential</option>
                     <option>Commercial</option>
@@ -116,9 +114,63 @@ const Quote = () => {
                   </Form.Select>
                 </Form.Group>
               </Col>
+              <Col md={4}>
+                <Form.Group controlId="formLength">
+                  <Form.Label className="form-label">Length (m)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="length"
+                    value={formData.length}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g., 10"
+                    min="0"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group controlId="formWidth">
+                  <Form.Label className="form-label">Width (m)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="width"
+                    value={formData.width}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g., 8"
+                    min="0"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group controlId="formHeight">
+                  <Form.Label className="form-label">Height (m)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="height"
+                    value={formData.height}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g., 3"
+                    min="0"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group controlId="formTimeline">
+                  <Form.Label className="form-label">Timeline</Form.Label>
+                  <Form.Control
+                    type="date"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
               <Col md={12}>
                 <Form.Group controlId="formDetails">
-                  <Form.Label>Project Details</Form.Label>
+                  <Form.Label className="form-label">Project Details</Form.Label>
                   <Form.Control
                     as="textarea"
                     name="details"
@@ -127,12 +179,11 @@ const Quote = () => {
                     rows={4}
                     required
                     placeholder="Describe your project..."
-                    className="rounded-3"
                   />
                 </Form.Group>
               </Col>
-              <Col md={12} className="text-center mt-4">
-                <Button variant="primary" type="submit" className="px-5 py-3 rounded-pill" disabled={loading}>
+              <Col md={12} className="text-start mt-4">
+                <Button variant="primary" type="submit" className="submit-button" disabled={loading}>
                   {loading ? <Spinner animation="border" size="sm" className="me-2" /> : <FaPaperPlane className="me-2" />}
                   {loading ? "Sending..." : "Submit Request"}
                 </Button>

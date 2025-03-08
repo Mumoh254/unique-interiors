@@ -46,7 +46,7 @@ const Home = () => {
             transition={{ type: "spring", stiffness: 50, delay: 1.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="custom-btn quote-btn" onClick={() => navigate('/quote')}>
+              <Button className="custom-btn" onClick={() => navigate('/quote')}>
                 Get a Quote
               </Button>
             </motion.div>

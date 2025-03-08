@@ -6,14 +6,14 @@ const Footer = () => {
     <>
       {/* Hero Section Before Footer */}
       <div 
-        className="hero-section"
+        className="hero-section "
         style={{ 
           backgroundImage: `url('/images/footer.png')`, // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="hero-overlay">
+        <div className="hero-overlay p-4 ">
           <h2 className="hero-text">Bring Your Future to Life with Us</h2>
           <p className="hero-subtext">Transform your space with our innovative designs and expert craftsmanship.</p>
         </div>
