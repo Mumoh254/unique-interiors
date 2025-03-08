@@ -2,15 +2,15 @@ import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-
 // Import images (replace with your actual image paths)
-import residentialImage from '/images/kitchen.jpg';
-import officeImage from '/images/kitchen.jpg';
-import outdoorImage from '/images/kitchen.jpg';
-import renovationImage from '/images/kitchen.jpg';
-import constructionImage from '/images/kitchen.jpg';
+import residentialImage from '/images/residential.webp';
+import officeImage from '/images/ofiice.png';
+
+import renovationImage from '/images/renovation.webp';
+import constructionImage from '/images/construction.webp';
 import gypsumImage from '/images/kitchen.jpg';
-import tilingImage from '/images/kitchen.jpg';
+import tilingImage from '/images/tiling.webp';
+
 import cabrosImage from '/images/kitchen.jpg';
 
 const ProjectTypes = () => {
@@ -31,11 +31,7 @@ const ProjectTypes = () => {
       description: 'Designing workspaces that inspire productivity and creativity.',
       image: officeImage,
     },
-    {
-      title: 'Outdoor Projects',
-      description: 'Creating stunning outdoor spaces for relaxation and entertainment.',
-      image: outdoorImage,
-    },
+   
     {
       title: 'House Renovation',
       description: 'Revamping and modernizing existing homes for a fresh look.',
@@ -79,7 +75,12 @@ const ProjectTypes = () => {
               }}
             >
               {/* Gradient Overlay */}
-              <div className="gradient-overlay"></div>
+              <div
+                className="gradient-overlay position-absolute top-0 start-0 w-100 h-100"
+                style={{
+                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2))',
+                }}
+              ></div>
 
               {/* Text Overlay */}
               <div className="text-overlay position-absolute bottom-0 start-0 w-100 p-4">

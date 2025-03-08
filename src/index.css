@@ -15,15 +15,30 @@
   --gradient-yellow: linear-gradient(135deg, #ffd93d 0%, #ff6b35 100%);
   --soft-white: #f8f9fa;
   --dark-overlay: rgba(10, 25, 47, 0.85);
+  --small-font:  1.8rem;
 }
 
+
+/*   basit  subset  start */
 body{
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Titillium Web', sans-serif !important;
 
 }
+
+html{
+  padding: 0;
+  margin: 0;
+}
+
+
+/*   basit  subset    end   */
+
+
+/*    come  start  */
 
 .home-container {
   position: relative;
@@ -37,10 +52,10 @@ body{
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  min-height: 100%;
+  min-width: 100% !important;
+  min-height: 100% !important;
   z-index: 2;
-  filter: brightness(0.8);
+  filter: brightness(1.3);
 }
 
 .video-overlay {
@@ -49,46 +64,42 @@ body{
   left: 0;
   width: 100%;
   height: 90%;
- 
   z-index: 1;
 }
 
 .content-overlay {
-  width:  fit-content ;
+  width: fit-content;
   border-radius: 10px;
   position: relative;
-  background-color:  var(--dark-overlay)  ;
+  background-color: var(--dark-overlay);
   z-index: 10;
-  text-align:  start;
-  color: #f8f9fa ;
+  text-align: start;
+  color: var(--soft-white);
   padding: 1rem;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .main-heading {
-
   font-weight: 700;
   padding: 10PX;
-  font-size: 4.9rem;
+  font-size: 4.8rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: var(--light-orange) ;
+  background: var(--light-orange);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
-  text-shadow: 2px 2px 4px rgba(0, 5, 12, 0.089);
+  text-shadow: 2px 2px 4px rgba(255, 166, 0, 0.219);
 }
 
 .sub-text {
- 
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-bottom: 3rem;
   max-width: 800px;
-
-  color:  #f8f9fa ;
+  color: var(--soft-white);
   letter-spacing: 0.03em;
 }
 
@@ -96,25 +107,24 @@ body{
   padding: 0;
   display: flex;
   gap: 2rem;
-  
-  align-items: start  !important;
+  align-items: start !important;
   flex-wrap: wrap;
+  justify-content: center; /* Center button group on smaller screens */
 }
 
 .cta-button {
-  /* padding: 1.2rem 2.5rem; */
-  font-size: 1.2rem;
- 
   border: none;
-  padding: 1rem  !important;
-
   font-weight: 600;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background-color:   var(--navy-blue) !important;
+  background-color: var(--navy-blue) !important;
+  text-align: center;
+  padding: 1.5rem 3rem; /* Adjust padding */
+  font-size: 1.8rem;
+  width: auto;
 }
 
 .cta-button::after {
@@ -127,22 +137,18 @@ body{
   background: linear-gradient(to right, #051f2d, #ac451125) !important;
   opacity: 0;
   transition: opacity 0.3s ease;
-  
 }
 
 .cta-button:hover::after {
   opacity: 1;
-
 }
 
-
-
-
+/* responsive design lp */
 @media (max-width: 992px) {
   .main-heading {
     font-size: 3.5rem;
   }
-  
+
   .sub-text {
     font-size: 1.4rem;
   }
@@ -163,13 +169,19 @@ body{
     max-width: 90%;
   }
 
-  .cta-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
   .button-group {
     gap: 1.5rem;
+    background: #000 !important;
+    min-height: fit-content !important;
+    padding: 2rem;
+    justify-content: center; /* Keep buttons centered */
+  }
+
+  .cta-button {
+    padding: 1rem 2rem !important; /* Adjust padding */
+    background-color: red !important;
+    font-size: 1.6rem !important;
+    width: auto !important; /* Ensure the button width adjusts based on content */
   }
 }
 
@@ -183,22 +195,20 @@ body{
   }
 
   .cta-button {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .button-group {
-    flex-direction: column;
-    align-items: center;
+    width: 900px !important;
+    padding: 2rem 5rem !important; /* Reduced padding */
+    font-size: 1.4rem !important; /* Adjust font size */
+    width: auto !important; /* Adjust width */
   }
 }
 
 
-
-
 /* Header.css */
+
+/* logo */
 .logo {
   height: 40px;
+ 
   margin-right: 15px;
 }
 
@@ -208,6 +218,7 @@ body{
 
 
 .hamburger {
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -315,10 +326,6 @@ body{
 
 
 
-
-
-
-/* Consultation.css */
 
 
 /* DatePicker Custom Styles */
@@ -459,9 +466,9 @@ body{
 
 
 /* consoltation */
+
 .consultation-container {
   max-width: 1000px;
-
   margin: auto;
   padding: 2rem;
 
@@ -669,10 +676,12 @@ body{
 
 
 
+
 /* Footer.css */
+
 .footer-container {
   background: var(--navy-blue);
-  color: #f8f9fa ;
+  color: var(--soft-white) ;
   padding: 3rem 2rem 1rem;
   margin-top: auto;
 }
@@ -750,13 +759,13 @@ body{
   padding: 0.8rem;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 4px;
-  background:  #f8f9fa ;
+  background:   var(--soft-white);
   color: var(--navy-blue) ;
 }
 
 .newsletter-form button {
   background: var(--heavy-orange);
-  color:  #f8f9fa;
+  color:   var(--soft-white);
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 4px;
@@ -824,11 +833,11 @@ body{
 
 .btn{
   background-color:  var(--navy-blue) ;
-  color: #f8f9fa;
+  color:   var(--soft-white);
 }
 
 
-/* AboutUs.css */
+
 
 
 /* AboutUs.css */
@@ -887,9 +896,6 @@ body{
 }
 
 
-.bg{
-  background-color: #f56217 !important;
-}
 
 
 
@@ -901,7 +907,7 @@ body{
 .thin-arrow {
   width: 150px;
   height: 2px;
-  background-color: #0d6efd; 
+  background-color:   var(--light-orange); 
   position: relative;
   animation: arrowAnimation 1.5s infinite;
 }
@@ -914,8 +920,8 @@ body{
   transform: translateY(-50%) rotate(45deg); 
   width: 10px;
   height: 10px;
-  border-top: 2px solid #0d6efd;
-  border-right: 2px solid #0d6efd;
+  border-top: 2px solid   var(--light-orange);
+  border-right: 2px solid  var(--light-orange);
 }
 
 @keyframes arrowAnimation {
@@ -983,14 +989,16 @@ body{
 
 
 
-/* footer   */
+/* footer  ends */
+
+
+
+
+
 
 /* Hero Section Before Footer */
 .hero-section {
-  background-image: url('/images/hero-bg.jpg'); /* Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  height: 300px; /* Adjust height as needed */
+  height: 400px; /* Adjust height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1008,46 +1016,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.hero-text {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.hero-subtext {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Footer Container */
-
-
-/* Hero Section Before Footer */
-.hero-section {
-  height: 300px; /* Adjust height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.hero-overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  text-align: start;
   color: white;
 }
 
@@ -1067,7 +1036,7 @@ body{
 .footer-container {
 
   padding: 2rem 0;
-  color: #f8f9fa ;
+  color:   var(--soft-white);
 }
 
 .footer-content {
@@ -1096,8 +1065,9 @@ body{
 
 .map-container iframe {
   width: 100%;
-  height: 150px;
+  height: 180px;
   border: none;
+  outline: none;
 }
 
 .footer-links {
@@ -1127,21 +1097,21 @@ body{
 .newsletter-form input {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--soft-white);
   border-radius: 4px;
 }
 
 .newsletter-form button {
   padding: 0.5rem 1rem;
-  background-color: #0d6efd;
-  color: white;
+  background-color:   var(--heavy-orange);
+  color:  var(--soft-white);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .newsletter-form button:hover {
-  background-color: #0b5ed7;
+  background-color:  var(--light-orange);
 }
 
 .social-icons {
@@ -1156,14 +1126,14 @@ body{
 }
 
 .social-icons a:hover {
-  color: #0d6efd;
+  color:  var(--heavy-orange);
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
   padding: 1rem 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid  var(--soft-white);
 }
 
 .legal-links {
@@ -1180,7 +1150,8 @@ body{
   text-decoration: underline;
 }
 
-/* Gradient Overlay */
+/* Gradient Overlay   for   projects */
+
 .gradient-overlay {
   position: absolute  !important;
   top: 0  !important;
@@ -1188,16 +1159,17 @@ body{
   width: 100%  !important;
   height: 100%  !important;
   background:  linear-gradient(135deg, #060e1fe8 0%, #03071f8a 100%);
-  opacity: 0.9  !important; /* Adjust opacity as needed */
+  opacity: 0.9  !important; 
+  
   transition: opacity 0.3s ease;
 }
 
 /* Text Overlay */
 .text-overlay {
-  z-index: 2; /* Ensure text is above the gradient */
+  z-index: 2; 
 }
 
-/* Hover Effect for Project Cards */
+
 .project-card {
   transition: transform 0.3s ease;
 }
@@ -1207,24 +1179,24 @@ body{
 }
 
 .project-card:hover .gradient-overlay {
-  opacity: 1; /* Increase opacity on hover */
+  opacity: 1; 
 }
 
-/* Button Animation */
+
 .btn-outline-light {
   transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
 .btn-outline-light:hover {
-  background-color: #b31c1c;
-  color: #000;
+  background-color:  var(--light-orange);
+  color: var(--navy-blue);
 }
 
 /* Thin Arrow Animation */
 .thin-arrow {
   width: 50px;
   height: 2px;
-  background-color: #6c757d;
+  background-color:  var(--heavy-orange);
   position: relative;
   transition: width 0.3s ease;
 }
@@ -1236,47 +1208,78 @@ body{
   top: -3px;
   width: 10px;
   height: 10px;
-  border-right: 2px solid #6c757d;
-  border-top: 2px solid #6c757d;
+  border-right: 2px solid   var(--heavy-orange);
+  border-top: 2px solid  var(--heavy-orange);
   transform: rotate(45deg);
   transition: right 0.3s ease;
 }
 
 .arrow-container:hover .thin-arrow {
-  width: 60px; /* Extend arrow on hover */
+  width: 60px; 
 }
 
 .arrow-container:hover .thin-arrow::after {
-  right: -10px; /* Move arrow head on hover */
+  right: -10px;
 }
 
 
 
-/* Custom CSS for Filter Buttons */
-.btn-group.flex-wrap {
-  gap: 0.5rem; /* Add gap between buttons */
-  max-width: 100%  !important;
+/* Filter Buttons */
+
+.category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 1.9rem; 
+  font-size: 1.2rem; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+  border-radius: 10px;
+  transition: all 0.3s ease; 
+  min-width: 100px;
 }
 
-.btn-outline-primary {
-  border-color: #0d6efd;
-  color: #0d6efd;
-  max-width: 70px  !important;
-  padding: 0.4rem !important;
+/* Styles for btn-primary */
+.category-button.btn-primary {
+  background-color: var(--heavy-orange);
+  border-color: var(--soft-white);
+  color: var(--soft-white);
 }
 
-.btn-outline-primary:hover {
-  background-color: #0d6efd;
-  color: #fff;
+/* Hover effect for btn-primary */
+.category-button.btn-primary:hover {
+  background-color: var(--light-orange);
+  border-color: var(--navy-blue);
+  color: var(--navy-blue); 
 }
 
-.btn-primary {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
 
+.category-button.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--heavy-orange);
+  color: var(--heavy-orange); 
 }
 
-.btn-primary:hover {
-  background-color: #0b5ed7;
-  border-color: #0b5ed7;
+
+.category-button.btn-outline-primary:hover {
+  background-color: var(--heavy-orange);
+  border-color: var(--heavy-orange);
+  color: var(--soft-white);
+}
+
+
+@media (max-width: 768px) {
+  .category-button {
+    padding: 0.5rem 1rem; 
+    font-size: 1rem;  /* Allow buttons to be more compact */
+  }
+}
+
+@media (max-width: 480px) {
+  .category-button {
+    width: 70px;
+    padding: 0.8rem 1.8rem; 
+    font-size: 0.9rem; 
+    min-width: 70px; 
+  }
 }

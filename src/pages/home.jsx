@@ -52,7 +52,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="cta-button consult-btn" onClick={() => navigate('/consultation')}>
+              <Button className="cta-button " onClick={() => navigate('/consultation')}>
                 Book Consultation
               </Button>
             </motion.div>

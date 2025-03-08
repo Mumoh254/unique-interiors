@@ -113,15 +113,16 @@ export default function Projects() {
         <div className="mb-4 text-center">
           <ButtonGroup className="flex-wrap">
             {categories.map(cat => (
-              <Button
-                key={cat}
-                variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
-                onClick={() => setSelectedCategory(cat)}
-                className="m-1 rounded-pill"
-                style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
-              >
-                {cat}
-              </Button>
+             <Button
+             key={cat}
+             variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
+             onClick={() => setSelectedCategory(cat)}
+             className="category-button m-1 rounded-pill"
+             style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
+           >
+             {cat}
+           </Button>
+           
             ))}
           </ButtonGroup>
         </div>
