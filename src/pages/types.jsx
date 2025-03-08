@@ -75,6 +75,7 @@ const ProjectTypes = () => {
               }}
             >
               {/* Gradient Overlay */}
+
               <div
                 className="gradient-overlay position-absolute top-0 start-0 w-100 h-100"
                 style={{
@@ -82,14 +83,15 @@ const ProjectTypes = () => {
                 }}
               ></div>
 
-              {/* Text Overlay */}
+              {/*  Overlay Text */}
+
               <div className="text-overlay position-absolute bottom-0 start-0 w-100 p-4">
                 <h5 className="text-white fw-bold mb-2">{project.title}</h5>
                 <p className="text-white small mb-3">{project.description}</p>
                 <Button
-                  variant="outline-light"
+                
                   size="sm"
-                  className="align-self-start"
+                  className="align-self-start  bg"
                   onClick={handleViewProjects}
                 >
                   View More
@@ -101,7 +103,9 @@ const ProjectTypes = () => {
       </Row>
 
       {/* Flexbox Container for Arrow and Button */}
+
       <div className="d-flex align-items-center justify-content-between">
+
         {/* Animated Arrow and Text */}
         <div className="arrow-container">
           <div className="text-muted small mb-2">Explore Our Projects</div>
@@ -110,10 +114,13 @@ const ProjectTypes = () => {
 
         {/* View Projects Button */}
         <Button
-          variant="primary"
+ 
           size="lg"
-          className="px-5 py-3 rounded-pill fw-bold shadow-sm"
+
+          className="px-5 py-3 bg bgc fw-bold shadow-sm"
+
           onClick={handleViewProjects}
+
         >
           View Our Recent Projects
         </Button>
@@ -121,5 +128,6 @@ const ProjectTypes = () => {
     </div>
   );
 };
+
 
 export default ProjectTypes;

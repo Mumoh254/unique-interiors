@@ -86,12 +86,12 @@ html{
   font-size: 4.8rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: var(--light-orange);
+  background: var(--heavy-orange);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
-  text-shadow: 2px 2px 4px rgba(255, 166, 0, 0.219);
+  text-shadow: 2px 2px 4px rgba(187, 125, 9, 0.308);
 }
 
 .sub-text {
@@ -171,18 +171,20 @@ html{
 
   .button-group {
     gap: 1.5rem;
-    background: #000 !important;
+ 
     min-height: fit-content !important;
-    padding: 2rem;
+    
     justify-content: center; /* Keep buttons centered */
   }
 
-  .cta-button {
-    padding: 1rem 2rem !important; /* Adjust padding */
-    background-color: red !important;
-    font-size: 1.6rem !important;
-    width: auto !important; /* Ensure the button width adjusts based on content */
+  .bgc{
+    width: 120px !important;
+    border: none !important;
+    line-height: 25px  !important;
+    font-weight: 600  !important;
+    color: var(--soft-white) !important;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -1283,4 +1285,21 @@ html{
     font-size: 1.1rem !important; 
     min-width: 100px; 
   }
+}
+
+
+.bg{
+  background: transparent !important;
+  padding: 0.3rem !important;
+  border:   2px  solid var(--heavy-orange) !important;
+  color:  var(--soft-white);
+}
+
+.bg:hover{
+  background: var(--heavy-orange) !important;
+  transition: 1s;
+}
+.bgc{
+  background:  var(--heavy-orange) !important;
+  color: var(--navy-blue) !important;
 }

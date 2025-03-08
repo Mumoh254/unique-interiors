@@ -46,13 +46,13 @@ const Home = () => {
             transition={{ type: "spring", stiffness: 50, delay: 1.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="cta-button quote-btn" onClick={() => navigate('/quote')}>
+              <Button className="bgc quote-btn" onClick={() => navigate('/quote')}>
                 Get a Quote
               </Button>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="cta-button " onClick={() => navigate('/consultation')}>
+              <Button className="bgc " onClick={() => navigate('/consultation')}>
                 Book Consultation
               </Button>
             </motion.div>
