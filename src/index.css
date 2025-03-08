@@ -1179,3 +1179,73 @@ body{
 .legal-links a:hover {
   text-decoration: underline;
 }
+
+/* Gradient Overlay */
+.gradient-overlay {
+  position: absolute  !important;
+  top: 0  !important;
+  left: 0  !important;
+  width: 100%  !important;
+  height: 100%  !important;
+  background:  linear-gradient(135deg, #060e1fe8 0%, #03071f8a 100%);
+  opacity: 0.9  !important; /* Adjust opacity as needed */
+  transition: opacity 0.3s ease;
+}
+
+/* Text Overlay */
+.text-overlay {
+  z-index: 2; /* Ensure text is above the gradient */
+}
+
+/* Hover Effect for Project Cards */
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card:hover .gradient-overlay {
+  opacity: 1; /* Increase opacity on hover */
+}
+
+/* Button Animation */
+.btn-outline-light {
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.btn-outline-light:hover {
+  background-color: #b31c1c;
+  color: #000;
+}
+
+/* Thin Arrow Animation */
+.thin-arrow {
+  width: 50px;
+  height: 2px;
+  background-color: #6c757d;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.thin-arrow::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #6c757d;
+  border-top: 2px solid #6c757d;
+  transform: rotate(45deg);
+  transition: right 0.3s ease;
+}
+
+.arrow-container:hover .thin-arrow {
+  width: 60px; /* Extend arrow on hover */
+}
+
+.arrow-container:hover .thin-arrow::after {
+  right: -10px; /* Move arrow head on hover */
+}
