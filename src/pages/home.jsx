@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useCallback, lazy, Suspense } from 'react';  // Import useCallback
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import WhatsAppWidget from '../widgets/watsapp';
-import Testimonials from './testmonials';
-import FAQ from './faq';
-import ProjectTypes from './types';
+import { motion } from 'framer-motion'; // Correct import
+
+const WhatsAppWidget = lazy(() => import('../widgets/watsapp'));
+const Testimonials = lazy(() => import('./testmonials'));
+const FAQ = lazy(() => import('./faq'));
+const ProjectTypes = lazy(() => import('./types'));
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const handleGetQuote = useCallback(() => {
+    navigate('/quote');
+  }, [navigate]); // useCallback ensures that navigate function reference remains constant
+
+  const handleBookConsultation = useCallback(() => {
+    navigate('/consultation');
+  }, [navigate]); // useCallback ensures that navigate function reference remains constant
 
   return (
     <>
@@ -38,37 +47,49 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="button-group"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 50, delay: 1.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button className="custom-btn" onClick={() => navigate('/quote')}>
+              <button className="custom-btn" onClick={handleGetQuote}>
                 Get a Quote
               </button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button className="custom-btn" onClick={() => navigate('/consultation')}>
+              <button
+                className="custom-btn"
+                onClick={handleBookConsultation}
+              >
                 Book Consultation
               </button>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Thin Arrow with "Explore More" Text */}
         <div className="explore-more">
           <span>Explore More</span>
           <div className="thin-arrow"></div>
         </div>
-
-        <WhatsAppWidget />
       </div>
 
-      <ProjectTypes />
-      <Testimonials />
-      <FAQ />
+      <Suspense fallback={<div>Loading WhatsApp Widget...</div>}>
+        <WhatsAppWidget />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Project Types...</div>}>
+        <ProjectTypes />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Testimonials...</div>}>
+        <Testimonials />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading FAQ...</div>}>
+        <FAQ />
+      </Suspense>
     </>
   );
 };

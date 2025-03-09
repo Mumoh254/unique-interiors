@@ -9,8 +9,7 @@ import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import { FaUser, FaEnvelope, FaPhone, FaHome, FaCalendarAlt, FaToolbox } from 'react-icons/fa';
 
-// Kenyan Counties  array 
-
+// Kenyan Counties array
 const kenyanCounties = [
   'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta',
   'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru',
@@ -24,7 +23,7 @@ const kenyanCounties = [
 
 const Consultation = () => {
   useEffect(() => {
-    emailjs.init('FGBV3zSBJEQcNqihu'); // Your public key
+    emailjs.init('FGBV3zSBJEQcNqihu'); // Initialize EmailJS with public key
   }, []);
 
   const navigate = useNavigate();
@@ -70,9 +69,9 @@ const Consultation = () => {
       console.log('Sending request with params:', templateParams);
 
       const response = await emailjs.send(
-        'service_kortt7m',
-        'template_g5i570v',
-        templateParams
+        'service_kortt7m',       // Service ID
+        'template_g5i570v',      // Template ID
+        templateParams           // Template parameters
       );
 
       console.log('EmailJS response:', response);
@@ -87,7 +86,7 @@ const Consultation = () => {
         }).then(() => navigate('/'));
       }
 
-      resetForm();
+      resetForm(); // Reset form after submission
 
     } catch (error) {
       console.error('EmailJS Error Details:', {
@@ -137,9 +136,7 @@ const Consultation = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label>Property Type</label>
-          
                   <Field as="select" name="projectType">
-                
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
                     <option value="office">Office Space</option>
