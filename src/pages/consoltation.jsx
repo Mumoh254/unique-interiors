@@ -222,7 +222,7 @@ const Consultation = () => {
               </div>
             </div>
 
-            <Button type="submit" className="submit-btn">
+            <Button type="submit" className="btn">
               Book Consultation
             </Button>
           </Form>

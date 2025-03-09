@@ -236,8 +236,8 @@ html{
 /* Responsive Design for Buttons */
 @media (max-width: 992px) {
   .custom-btn {
-    padding: 1.25rem 2.5rem; /* Slightly smaller padding */
-    font-size: 1.1rem; /* Slightly smaller text size */
+    padding: 1.25rem 2.5rem !important; /* Slightly smaller padding */
+    font-size: 1.8rem  !important; /* Slightly smaller text size */
   }
 }
 
@@ -250,8 +250,10 @@ html{
 
 @media (max-width: 440px) {
   .custom-btn {
-    padding: 0.75rem 1.5rem; /* Smallest padding */
-    font-size: 0.9rem; /* Smallest text size */
+
+    padding: 75rem 1.5rem  !important; /* Smallest padding */
+    font-size: 9rem  !important; /* Smallest text size */
+
   }
 }
 
@@ -885,8 +887,9 @@ html{
 
 
 .btn{
-  background-color:  var(--navy-blue) ;
-  color:   var(--soft-white);
+  background-color:  var(--navy-blue)  !important;
+  color:   var(--soft-white)  !important;
+  padding: 200px  300px !important;
 }
 
 
