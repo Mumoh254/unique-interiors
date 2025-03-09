@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
+import React, { Suspense, lazy } from 'react';  
 import Quote from './pages/quote';
 import Consultation from './pages/consoltation';
 import Layout from './layout/layout';
-import NotFound from './pages/404';
+const NotFound = lazy(() => import('./pages/404'));
 import  About from  './pages/about'
+import  Home from  './pages/home'
 import  FAQ from  './pages/faq'
 import  Contact from  './pages/contact'
 import Projects from './pages/projects';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { IoMdClose } from 'react-icons/io'; // Import close icon
+import { IoMdClose } from 'react-icons/io'; 
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);

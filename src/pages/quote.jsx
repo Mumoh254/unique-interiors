@@ -9,10 +9,10 @@ const Quote = () => {
     email: "",
     phone: "",
     projectType: "Residential",
-    length: "", // New field for length
-    width: "", // New field for width
-    height: "", // New field for height
-    timeline: "", // Timeline field
+    length: "",
+    width: "",
+    height: "",
+    timeline: "",
     details: "",
   });
 
