@@ -53,6 +53,7 @@ html{
   --dark-overlay: rgba(10, 25, 47, 0.85);
 }
 
+
 /* Home Container */
 .home-container {
   position: relative;
@@ -69,7 +70,7 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--dark-overlay);
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   z-index: 1;
 }
 
@@ -88,7 +89,7 @@ html{
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--soft-white);
+  color: #fff; /* Soft white */
   padding: 0 1rem;
 }
 
@@ -113,19 +114,23 @@ html{
 }
 
 .custom-btn {
-  background-color: var(--heavy-orange);
+  background-color: #ff6b35; /* Heavy orange */
   border: none;
   font-weight: 600;
   padding: 1rem 2rem;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .custom-btn:hover {
-  background-color: var(--light-orange);
+  background-color: #ff8c42; /* Light orange */
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Thin Arrow with "Explore More" Text */
@@ -138,7 +143,7 @@ html{
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: var(--soft-white);
+  color: #fff;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -147,7 +152,7 @@ html{
 .thin-arrow {
   width: 2px;
   height: 40px;
-  background-color: var(--soft-white);
+  background-color: #fff;
   position: relative;
   animation: bounce 2s infinite;
 }
@@ -159,8 +164,8 @@ html{
   left: -5px;
   width: 10px;
   height: 10px;
-  border-right: 2px solid var(--soft-white);
-  border-bottom: 2px solid var(--soft-white);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   transform: rotate(45deg);
 }
 
@@ -203,57 +208,11 @@ html{
 
   .button-group {
     flex-direction: column;
-    padding: 2rem !important;
-    background: #000 !important;
     gap: 1rem;
   }
 
   .custom-btn {
     width: 100%;
-    
-  }
-}
-
-
-/* Custom Button Styles */
-.custom-btn {
-  padding: 1.5rem 3rem; /* Larger padding */
-  font-size: 1.25rem; /* Larger text size */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background-color: var(--heavy-orange);
-  border: none;
-  color: var(--soft-white);
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: var(--light-orange);
-  transform: translateY(-2px);
-}
-
-/* Responsive Design for Buttons */
-@media (max-width: 992px) {
-  .custom-btn {
-    padding: 1.25rem 2.5rem !important; /* Slightly smaller padding */
-    font-size: 1.8rem  !important; /* Slightly smaller text size */
-  }
-}
-
-@media (max-width: 768px) {
-  .custom-btn {
-    padding: 1rem 2rem; /* Even smaller padding */
-    font-size: 1rem; /* Even smaller text size */
-  }
-}
-
-@media (max-width: 440px) {
-  .custom-btn {
-
-    padding: 75rem 1.5rem  !important; /* Smallest padding */
-    font-size: 9rem  !important; /* Smallest text size */
-
   }
 }
 

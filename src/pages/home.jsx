@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../widgets/watsapp';
 import Testimonials from './testmonials';
@@ -46,15 +45,14 @@ const Home = () => {
             transition={{ type: "spring", stiffness: 50, delay: 1.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="submit-btn" onClick={() => navigate('/quote')}>
+              <button className="custom-btn" onClick={() => navigate('/quote')}>
                 Get a Quote
-              </Button>
+              </button>
             </motion.div>
-
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="submit-btn" onClick={() => navigate('/consultation')}>
+              <button className="custom-btn" onClick={() => navigate('/consultation')}>
                 Book Consultation
-              </Button>
+              </button>
             </motion.div>
           </motion.div>
         </div>
