@@ -51,8 +51,11 @@ const Header = () => {
             <Nav.Link as={Link} to="/process" onClick={handleLinkClick}>
               Process
             </Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>
+              Contacts
+            </Nav.Link>
             <Nav.Link href="tel:+254710772575" onClick={handleLinkClick}>
-              Contact
+              Call
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
