@@ -675,7 +675,7 @@ html{
 
   padding: 15px 30px  !important;
   background:  var(--navy-blue)  !important ;
-  color:  #f8f9fa;
+  color:   var(--soft-white);
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
@@ -685,7 +685,8 @@ html{
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  background:  var(--dark-overlay)   ;
+  background:  var(--heavy-orange)   ;
+  color: var(--soft-white);
   
 }
 
@@ -886,11 +887,7 @@ html{
 }
 
 
-.btn{
-  background-color:  var(--navy-blue)  !important;
-  color:   var(--soft-white)  !important;
-  padding: 200px  300px !important;
-}
+
 
 
 
