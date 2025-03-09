@@ -1,16 +1,15 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './types.css'; // Ensure this path is correct
 
 // Import images (replace with your actual image paths)
 import residentialImage from '/images/residential.webp';
 import officeImage from '/images/ofiice.png';
-
 import renovationImage from '/images/renovation.webp';
 import constructionImage from '/images/construction.webp';
 import gypsumImage from '/images/kitchen.jpg';
 import tilingImage from '/images/tiling.webp';
-
 import cabrosImage from '/images/kitchen.jpg';
 
 const ProjectTypes = () => {
@@ -31,7 +30,6 @@ const ProjectTypes = () => {
       description: 'Designing workspaces that inspire productivity and creativity.',
       image: officeImage,
     },
-   
     {
       title: 'House Renovation',
       description: 'Revamping and modernizing existing homes for a fresh look.',
@@ -75,7 +73,6 @@ const ProjectTypes = () => {
               }}
             >
               {/* Gradient Overlay */}
-
               <div
                 className="gradient-overlay position-absolute top-0 start-0 w-100 h-100"
                 style={{
@@ -83,15 +80,13 @@ const ProjectTypes = () => {
                 }}
               ></div>
 
-              {/*  Overlay Text */}
-
+              {/* Overlay Text */}
               <div className="text-overlay position-absolute bottom-0 start-0 w-100 p-4">
                 <h5 className="text-white fw-bold mb-2">{project.title}</h5>
                 <p className="text-white small mb-3">{project.description}</p>
                 <Button
-                
                   size="sm"
-                  className="align-self-start  bg"
+                  className="align-self-start bg"
                   onClick={handleViewProjects}
                 >
                   View More
@@ -103,9 +98,7 @@ const ProjectTypes = () => {
       </Row>
 
       {/* Flexbox Container for Arrow and Button */}
-
       <div className="d-flex align-items-center justify-content-between">
-
         {/* Animated Arrow and Text */}
         <div className="arrow-container">
           <div className="text-muted small mb-2">Explore Our Projects</div>
@@ -114,13 +107,9 @@ const ProjectTypes = () => {
 
         {/* View Projects Button */}
         <Button
- 
           size="lg"
-
-          className="px-5 py-3 bg bgc fw-bold shadow-sm"
-
+          className="custom-btn"
           onClick={handleViewProjects}
-
         >
           View Our Recent Projects
         </Button>
@@ -128,6 +117,5 @@ const ProjectTypes = () => {
     </div>
   );
 };
-
 
 export default ProjectTypes;

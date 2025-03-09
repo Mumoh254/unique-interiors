@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close the navbar when a link is clicked
+  };
+
   return (
     <Navbar bg="light" expand="lg" fixed="top" expanded={isOpen}>
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" onClick={handleLinkClick}>
           <img
             src="/images/logo.png"
             alt="Unique Interiors Logo"
@@ -16,12 +20,12 @@ const Header = () => {
           />
           Unique Interiors
         </Navbar.Brand>
-        <Navbar.Toggle 
-          aria-controls="basic-navbar-nav" 
-          aria-expanded={isOpen} 
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className={`hg  hamburger ${isOpen ? 'open' : ''}`}>
+          <div className={`hamburger ${isOpen ? 'open' : ''}`}>
             <span></span>
             <span></span>
             <span></span>
@@ -29,10 +33,21 @@ const Header = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/about" onClick={() => setIsOpen(false)}>About</Nav.Link>
-            <Nav.Link as={Link} to="/projects" onClick={() => setIsOpen(false)}>Projects</Nav.Link>
-            <Nav.Link as={Link} to="/process" onClick={() => setIsOpen(false)}>Process</Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={() => setIsOpen(false)}>Contact</Nav.Link>
+            <Nav.Link as={Link} to="/" onClick={handleLinkClick}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/projects" onClick={handleLinkClick}>
+              Projects
+            </Nav.Link>
+            <Nav.Link as={Link} to="/process" onClick={handleLinkClick}>
+              Process
+            </Nav.Link>
+            <Nav.Link href="tel:+254710772575" onClick={handleLinkClick}>
+              Contact
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

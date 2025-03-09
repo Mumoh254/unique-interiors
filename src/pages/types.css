@@ -1,0 +1,57 @@
+/* Custom Button Styles */
+.project-types-section .custom-btn {
+  background-color: #ff6b35; /* Heavy orange */
+  border: none;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-types-section .custom-btn:hover {
+  background-color: #ff8c42; /* Light orange */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Custom Button Styles */
+.project-types-section .custom-btn {
+  background-color: #ff6b35; /* Heavy orange */
+  border: none;
+  font-weight: 600;
+  padding: 1rem 2rem; /* Default padding for larger screens */
+  font-size: 1rem; /* Default font size for larger screens */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-types-section .custom-btn:hover {
+  background-color: #ff8c42; /* Light orange */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles for Small Devices */
+@media (max-width: 768px) {
+  .project-types-section .custom-btn {
+    padding: 0.75rem 1.5rem; /* Smaller padding for small devices */
+    font-size: 0.875rem; /* Smaller font size for small devices */
+  }
+}
+
+@media (max-width: 576px) {
+  .project-types-section .custom-btn {
+    padding: 0.5rem 1rem; /* Even smaller padding for very small devices */
+    font-size: 0.75rem; /* Even smaller font size for very small devices */
+  }
+}
