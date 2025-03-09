@@ -14,7 +14,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleLinkClick}>
           <img
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Unique Interiors Logo"
             className="logo"
           />

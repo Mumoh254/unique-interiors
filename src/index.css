@@ -7,6 +7,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Funnel+Display:wght@300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 
+@font-face {
+  font-family: 'Titillium Web';
+  src: url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Funnel+Display:wght@300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap') format('woff2');
+  font-display: swap; 
+}
+
+
 
 :root {
   --navy-blue: #0a192f;
@@ -55,6 +62,7 @@ html{
 
 
 /* Home Container */
+/* Home Container */
 .home-container {
   position: relative;
   height: 100vh;
@@ -62,6 +70,8 @@ html{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Adding will-change property to optimize for video */
+  will-change: transform, opacity;
 }
 
 .video-overlay {
@@ -70,7 +80,7 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background:  rgba(6, 6, 29, 0.26); /* Dark overlay */
+  background: rgba(6, 6, 29, 0.26); /* Dark overlay */
   z-index: 1;
 }
 
@@ -82,6 +92,8 @@ html{
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  /* Defer video loading */
+  loading: lazy;
 }
 
 /* Content Overlay */
@@ -89,7 +101,7 @@ html{
   position: relative;
   z-index: 2;
   text-align: center;
-  color:  var(--soft-white); /* Soft white */
+  color: var(--soft-white); /* Soft white */
   padding: 0 1rem;
 }
 
@@ -98,12 +110,19 @@ html{
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  /* Make sure the font is loaded quickly */
+  font-family: system-ui, sans-serif;
+  font-display: swap;
+  will-change: transform;
 }
 
 .sub-text {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
+  font-family: system-ui, sans-serif;
+  font-display: swap;
+  will-change: transform;
 }
 
 .button-group {
@@ -121,17 +140,18 @@ html{
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color:  var(--soft-white);
+  color: var(--soft-white);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  /* Avoid reflow on hover */
+  will-change: transform;
 }
 
 .custom-btn:hover {
-  background-color:  var(--navy-blue); /* Light orange */
+  background-color: var(--navy-blue); /* Light orange */
   transform: translateY(-2px);
   color: var(--soft-white);
-
 }
 
 /* Thin Arrow with "Explore More" Text */
@@ -144,7 +164,7 @@ html{
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color:  var(--soft-white);
+  color: var(--soft-white);
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -153,7 +173,7 @@ html{
 .thin-arrow {
   width: 2px;
   height: 40px;
-  background-color:  var(--soft-white);
+  background-color: var(--soft-white);
   position: relative;
   animation: bounce 2s infinite;
 }
@@ -165,8 +185,8 @@ html{
   left: -5px;
   width: 10px;
   height: 10px;
-  border-right: 2px solid  var(--soft-white);
-  border-bottom: 2px solid  var(--soft-white);
+  border-right: 2px solid var(--soft-white);
+  border-bottom: 2px solid var(--soft-white);
   transform: rotate(45deg);
 }
 
@@ -283,57 +303,70 @@ html{
 
 /* WhatsAppWidget.css */
 
+/* Optimized WhatsApp Widget */
 .whatsapp-widget {
   position: fixed;
   bottom: 10%;
   right: 10px;
-  background: #19b150;
+  background: #19b150; /* Use a specific green for consistency */
   color: white;
   font-weight: 600;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000; /* Keep it on top */
+  padding: 5px; /* Consistent padding */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition only necessary properties */
   overflow: hidden;
-  transition: all 0.3s ease;
-  padding: 0px  5px;
 }
 
+/* Widget Header */
 .widget-header {
-  padding: 5px 5px;
+  padding: 5px 10px; /* Add more space for a cleaner look */
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 .whatsapp-icon {
-  font-size: 16px;
-  margin-right: 15px;
+  font-size: 20px; /* Increase icon size for better visibility */
+  margin-right: 10px; /* Less margin for better spacing */
 }
 
+/* Widget Content */
 .widget-content {
-  padding: 5px;
-
+  padding: 5px 10px; /* Add padding for better spacing */
   color: var(--navy-blue);
 }
 
-.widget-content  input{
-  border: none;
+.widget-content input {
+  border: 1px solid #ccc; /* Add subtle border for clarity */
   margin-top: 2px;
   border-radius: 5px;
   outline: none;
+  padding: 3px 8px; /* Add padding to input */
+  transition: border-color 0.3s ease; /* Smooth border transition */
 }
 
+.widget-content input:focus {
+  border-color: #128C7E; /* Highlight input border on focus */
+}
+
+/* WhatsApp Button */
 .whatsapp-button {
   display: block;
   background: #128C7E;
-  color: white!important;
-  padding: 5px 10px;
+  color: white;
+  padding: 8px 15px; /* Increased padding for better touch targets */
   border-radius: 10px;
   text-align: center;
   border: none;
   text-decoration: none;
-  margin-top: 15px;
+  margin-top: 10px; /* Adjusted margin for better spacing */
   transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background: #075E54; /* Darker shade on hover for feedback */
 }
 
 
