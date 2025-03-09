@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
@@ -8,8 +8,9 @@ import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import { FaUser, FaEnvelope, FaPhone, FaHome, FaCalendarAlt, FaToolbox } from 'react-icons/fa';
+import LoadingSpinner from './looder';
 
-// Kenyan Counties array
+// Kenyan Counties array (full list preserved)
 const kenyanCounties = [
   'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta',
   'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru',
@@ -22,10 +23,7 @@ const kenyanCounties = [
 ];
 
 const Consultation = () => {
-  useEffect(() => {
-    emailjs.init('FGBV3zSBJEQcNqihu'); // Initialize EmailJS with public key
-  }, []);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const timeSlots = [
@@ -58,7 +56,12 @@ const Consultation = () => {
     serviceCategory: Yup.string().required('Required')
   });
 
+  useEffect(() => {
+    emailjs.init('FGBV3zSBJEQcNqihu');
+  }, []);
+
   const handleSubmit = async (values, { resetForm }) => {
+    setIsSubmitting(true);
     try {
       const templateParams = {
         ...values,
@@ -66,15 +69,11 @@ const Consultation = () => {
         fullRequest: JSON.stringify(values, null, 2)
       };
 
-      console.log('Sending request with params:', templateParams);
-
       const response = await emailjs.send(
-        'service_kortt7m',       // Service ID
-        'template_g5i570v',      // Template ID
-        templateParams           // Template parameters
+        'service_kortt7m',
+        'template_g5i570v',
+        templateParams
       );
-
-      console.log('EmailJS response:', response);
 
       if (response.status === 200) {
         Swal.fire({
@@ -86,20 +85,19 @@ const Consultation = () => {
         }).then(() => navigate('/'));
       }
 
-      resetForm(); // Reset form after submission
-
+      resetForm();
     } catch (error) {
-      console.error('EmailJS Error Details:', {
-        errorCode: error.status,
-        errorText: error.text,
-        fullError: error
-      });
+      console.error('Submission error:', error);
       Swal.fire('Error!', 'Failed to send request. Please try again.', 'error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="consultation-container">
+      {isSubmitting && <LoadingSpinner />}
+      
       <h2 className="form-title">Design Consultation Appointment</h2>
       <Formik
         initialValues={initialValues}
@@ -207,6 +205,7 @@ const Consultation = () => {
               </div>
             </div>
 
+            {/* Additional Details */}
             <div className="form-section">
               <h3><FaToolbox /> Additional Details</h3>
               <div className="form-group">
@@ -219,8 +218,12 @@ const Consultation = () => {
               </div>
             </div>
 
-            <Button type="submit" className="submit-btn">
-              Book Consultation
+            <Button 
+              type="submit" 
+              className="submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Book Consultation'}
             </Button>
           </Form>
         )}

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Container, Row, Col, Badge, Card, ListGroup } from 'react-bootstrap';
-import { FiCheck, FiAward, FiUsers, FiHome } from 'react-icons/fi';
+import LoadingSpinner from './looder';
+
+// Lazy load icons
+const FiCheck = lazy(() => import('react-icons/fi').then(module => ({ default: module.FiCheck })));
+const FiAward = lazy(() => import('react-icons/fi').then(module => ({ default: module.FiAward })));
+const FiUsers = lazy(() => import('react-icons/fi').then(module => ({ default: module.FiUsers })));
+const FiHome = lazy(() => import('react-icons/fi').then(module => ({ default: module.FiHome })));
 
 const About = () => (
   <Container className="py-5 about-section">
@@ -23,12 +29,18 @@ const About = () => (
       <Col lg={6} className="position-relative">
         <div className="image-container">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.webp" 
             alt="Our design team working" 
             className="img-fluid rounded-4 shadow-lg hover-transform"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="400"
           />
           <div className="experience-badge bg-primary text-white p-3 rounded-pill shadow-sm">
-            <FiAward className="me-2" />
+            <Suspense fallback={<LoadingSpinner />}>
+              <FiAward className="me-2" />
+            </Suspense>
             150+ Successful Projects
           </div>
         </div>
@@ -38,7 +50,9 @@ const About = () => (
       <Col lg={6}>
         <div className="ps-lg-4">
           <h2 className="fw-bold mb-4">
-            <FiHome className="me-2 text-primary" />
+            <Suspense fallback={<span>...</span>}>
+              <FiHome className="me-2 text-primary" />
+            </Suspense>
             Redefining Interior Spaces in Nairobi
           </h2>
           <p className="lead text-muted mb-4">
@@ -48,48 +62,45 @@ const About = () => (
           
           {/* Expertise Grid */}
           <Row className="g-4 mb-4">
-            <Col md={6}>
-              <div className="d-flex align-items-center p-3 bg-light rounded-3 shadow-sm">
-                <FiCheck className="text-success me-3 fs-4" />
-                <span>Residential Transformations</span>
-              </div>
-            </Col>
-            <Col md={6}>
-              <div className="d-flex align-items-center p-3 bg-light rounded-3 shadow-sm">
-                <FiCheck className="text-success me-3 fs-4" />
-                <span>Commercial Design Solutions</span>
-              </div>
-            </Col>
+            {['Residential Transformations', 'Commercial Design Solutions'].map((item, index) => (
+              <Col md={6} key={index}>
+                <div className="d-flex align-items-center p-3 bg-light rounded-3 shadow-sm">
+                  <Suspense fallback={<span>...</span>}>
+                    <FiCheck className="text-success me-3 fs-4" />
+                  </Suspense>
+                  <span>{item}</span>
+                </div>
+              </Col>
+            ))}
           </Row>
 
           {/* Design Philosophy Section */}
           <h3 className="fw-bold mt-5 mb-4">
-            <FiUsers className="me-2 text-primary" />
+            <Suspense fallback={<span>...</span>}>
+              <FiUsers className="me-2 text-primary" />
+            </Suspense>
             Our Design Philosophy
           </h3>
           <Row className="g-4">
-            <Col md={6}>
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body>
-                  <h5 className="fw-bold mb-3">Client-Centric Approach</h5>
-                  <p className="text-muted">
-                    We prioritize your vision through personalized consultations and 3D visualizations 
-                    before any project begins.
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={6}>
-              <Card className="h-100 border-0 shadow-sm">
-                <Card.Body>
-                  <h5 className="fw-bold mb-3">Sustainable Practices</h5>
-                  <p className="text-muted">
-                    Eco-friendly materials and energy-efficient solutions certified by KEBS and 
-                    Green Building Council.
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              {
+                title: 'Client-Centric Approach',
+                content: 'We prioritize your vision through personalized consultations and 3D visualizations...'
+              },
+              {
+                title: 'Sustainable Practices',
+                content: 'Eco-friendly materials and energy-efficient solutions certified by KEBS...'
+              }
+            ].map((card, index) => (
+              <Col md={6} key={index}>
+                <Card className="h-100 border-0 shadow-sm">
+                  <Card.Body>
+                    <h5 className="fw-bold mb-3">{card.title}</h5>
+                    <p className="text-muted">{card.content}</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </div>
       </Col>
@@ -104,18 +115,18 @@ const About = () => (
               <Col md={8}>
                 <h2 className="fw-bold mb-3">Our Achievements</h2>
                 <ListGroup variant="flush" className="achievement-list">
-                  <ListGroup.Item className="bg-transparent text-white d-flex align-items-center">
-                    <FiAward className="me-3 fs-4 text-primary" />
-                    2023 Kenya Interior Design Excellence Award
-                  </ListGroup.Item>
-                  <ListGroup.Item className="bg-transparent text-white d-flex align-items-center">
-                    <FiUsers className="me-3 fs-4 text-primary" />
-                    500+ Satisfied Clients Across East Africa
-                  </ListGroup.Item>
-                  <ListGroup.Item className="bg-transparent text-white d-flex align-items-center">
-                    <FiCheck className="me-3 fs-4 text-primary" />
-                    98% Client Satisfaction Rate
-                  </ListGroup.Item>
+                  {[
+                    '2023 Kenya Interior Design Excellence Award',
+                    '500+ Satisfied Clients Across East Africa',
+                    '98% Client Satisfaction Rate'
+                  ].map((item, index) => (
+                    <ListGroup.Item key={index} className="bg-transparent text-white d-flex align-items-center">
+                      <Suspense fallback={<span>...</span>}>
+                        {index === 0 ? <FiAward /> : index === 1 ? <FiUsers /> : <FiCheck />}
+                      </Suspense>
+                      <span className="ms-3">{item}</span>
+                    </ListGroup.Item>
+                  ))}
                 </ListGroup>
               </Col>
               <Col md={4} className="text-center">
@@ -133,4 +144,4 @@ const About = () => (
   </Container>
 );
 
-export default About;
+export default React.memo(About);
