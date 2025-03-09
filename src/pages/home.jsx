@@ -2,9 +2,12 @@ import React, { lazy, Suspense, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const WhatsAppWidget = lazy(() => import('../widgets/watsapp')); // Lazy load WhatsApp widget
+// Lazy load less important components
 const Testimonials = lazy(() => import('./testmonials')); // Lazy load Testimonials component
 const FAQ = lazy(() => import('./faq')); // Lazy load FAQ component
+
+// Immediately load essential components
+const WhatsAppWidget = lazy(() => import('../widgets/watsapp')); // Lazy load WhatsApp widget
 const ProjectTypes = lazy(() => import('./types')); // Lazy load Project Types component
 
 const Home = () => {
@@ -64,15 +67,20 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Lazy loading essential components first */}
       <Suspense fallback={<div>Loading WhatsApp Widget...</div>}>
         <WhatsAppWidget />
       </Suspense>
+
       <Suspense fallback={<div>Loading Project Types...</div>}>
         <ProjectTypes />
       </Suspense>
+
+      {/* Lazy load Testimonials and FAQ components after the main content */}
       <Suspense fallback={<div>Loading Testimonials...</div>}>
         <Testimonials />
       </Suspense>
+
       <Suspense fallback={<div>Loading FAQ...</div>}>
         <FAQ />
       </Suspense>

@@ -1,19 +1,19 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaPinterest, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
+import React from "react";
+import { FaFacebook, FaInstagram, FaPinterest, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <>
       {/* Hero Section Before Footer */}
-      <div 
-        className="hero-section "
-        style={{ 
+      <div
+        className="hero-section"
+        style={{
           backgroundImage: `url('/images/footer.png')`, // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="hero-overlay p-4 ">
+        <div className="hero-overlay p-4">
           <h2 className="hero-text">Bring Your Future to Life with Us</h2>
           <p className="hero-subtext">Transform your space with our innovative designs and expert craftsmanship.</p>
         </div>
@@ -30,16 +30,18 @@ const Footer = () => {
               <p>Tel: <a href="tel:+254710772575">+254710772575</a></p>
               <p>Email: <a href="mailto:info@hesebeck.de">uniqueinteriors@gmail.com</a></p>
             </address>
+
+            {/* Direct Map Embed */}
             <div className="map-container">
-              <iframe 
+              <iframe
                 title="Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.123456789012!2d10.1234567!3d52.654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM5JzE1LjYiTiAxMMKwMDcnMjkuNiJF!5e0!3m2!1sen!2sde!4v1234567890123!5m2!1sen!2sde"
-                width="250" 
-                height="150" 
-                style={{border:0}}
-                allowFullScreen="" 
-                loading="lazy">
-              </iframe>
+                width="250"
+                height="150"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
 
@@ -64,7 +66,8 @@ const Footer = () => {
               <input type="email" placeholder="Enter your email" required />
               <button type="submit">Subscribe</button>
             </form>
-            
+
+            {/* Social Icons */}
             <div className="social-icons">
               <a href="#"><FaFacebook /></a>
               <a href="#"><FaInstagram /></a>

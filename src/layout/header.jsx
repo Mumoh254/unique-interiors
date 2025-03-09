@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLinkClick = () => {
+  // Use useCallback to memoize the handleLinkClick function, preventing re-creation on every render
+  const handleLinkClick = useCallback(() => {
     setIsOpen(false); // Close the navbar when a link is clicked
-  };
+  }, []);
+
+  // Toggle the navbar state
+  const handleToggle = useCallback(() => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  }, []);
 
   return (
     <Navbar bg="light" expand="lg" fixed="top" expanded={isOpen}>
@@ -23,7 +29,7 @@ const Header = () => {
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           aria-expanded={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleToggle} // Use the optimized toggle function
         >
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>
             <span></span>
@@ -55,4 +61,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header); // Memoize the component to avoid unnecessary re-renders
