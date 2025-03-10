@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
-    historyApiFallback: true, // Ensures React Router works after refresh
+    historyApiFallback: true,
   },
 });

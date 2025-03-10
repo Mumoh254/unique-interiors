@@ -28,14 +28,14 @@ const ProcessComponent = () => {
   ];
 
   return (
-    <section className="process-section py-5 bg-light">
+    <section className="process-section py-5 ">
       <Container>
         <Row className="mb-5">
           <Col className="text-center">
-            <h2 className="display-5 fw-bold gradient-text mb-3">
+            <h2 className="display-5 fw-bold  mb-3" style={{color: "var(--navy-blue)"}} >
               Our Design Process
             </h2>
-            <p className="lead text-muted">
+            <p className=" ">
               Transparent workflow ensuring perfection at every stage
             </p>
           </Col>
@@ -47,13 +47,13 @@ const ProcessComponent = () => {
           
           {steps.map((step, index) => (
             <Col md={6} lg={3} key={index} className="process-step">
-              <div className="step-card p-4 bg-soft-white rounded-4 shadow-sm">
+              <div className="step-card p-4  rounded-4 shadow-sm bg"  >
                 <div className="step-number" style={{ color: 'var(--heavy-orange)' }}>{index + 1}</div>
                 <div className="step-icon mb-3">
                   {React.cloneElement(step.icon, { className: 'text-navy-blue', size: 40 })}
                 </div>
                 <h4 className="fw-bold mb-3" style={{ color: 'var(--navy-blue)' }}>{step.title}</h4>
-                <p className="text-muted mb-0">{step.description}</p>
+                <p className="mb-0">{step.description}</p>
               </div>
             </Col>
           ))}

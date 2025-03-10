@@ -120,7 +120,7 @@ export default function Projects() {
         
         {/* Responsive Filter Navigation */}
         <div className="mb-4 text-center">
-          <ButtonGroup className="flex-wrap">
+          <ButtonGroup className="flex-wrap ">
             {categories.map(cat => (
               <Button
                 key={cat}

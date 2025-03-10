@@ -1761,7 +1761,12 @@ html{
 
 @media (min-width: 992px)   {
   .btn3{
-    width: 30%  !important;
+    flex-wrap: wrap !important;
+    padding: 0 !important;
+    padding: 0.67rem   0.75rem !important;
+    width: 65%  !important;
+    padding-right: 2rem !important;
+   
   }
 }
 
