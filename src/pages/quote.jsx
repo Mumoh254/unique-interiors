@@ -178,7 +178,7 @@ const Quote = () => {
                     onChange={handleChange}
                     rows={4}
                     required
-                    placeholder="Describe your project..."
+                    placeholder="Describe your project... "
                   />
                 </Form.Group>
               </Col>
