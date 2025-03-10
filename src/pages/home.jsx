@@ -24,10 +24,19 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
-        <div className="video-overlay"></div>
-        <video autoPlay loop muted playsInline className="background-video" loading="lazy">
-          <source src="/videos/comp.mp4" type="video/mp4" />
-        </video>
+        <div className="video-overlay">  </div>
+        <video 
+  autoPlay 
+  loop 
+  muted 
+  playsInline 
+  className="background-video" 
+  preload="metadata" 
+  poster="/images/kitchen.jpg"
+>
+  <source src="/videos/comp.mp4" type="video/mp4" />
+</video>
+
 
         <div className="content-overlay">
           <motion.div
