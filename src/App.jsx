@@ -14,26 +14,27 @@ const Contact = lazy(() => import('./pages/contact'));
 const Projects = lazy(() => import('./pages/projects'));
 const TermsOfService = lazy(() => import('./pages/terms'));
 const CookiesPolicy = lazy(() => import('./pages/cookies'));
-const ProcessComponent = lazy(() => import('./pages/process')); // Uncomment if needed
+const ProcessComponent = lazy(() => import('./pages/process'));
 
 function App() {
   return (
     <Router>
-      <Suspense fallback={<LoadingSpinner />}> {/* Show  Loader while loading routes */}
+      <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
         <Routes>
+          {/* Wrap all routes inside Layout */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/quote" element={<Quote />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/cookies" element={<CookiesPolicy />} />
-            <Route path="/process" element={<ProcessComponent />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/consultation" element={<Consultation />} />
-            
-            {/*  404 page */}
+            <Route path="quote" element={<Quote />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="cookies" element={<CookiesPolicy />} />
+            <Route path="process" element={<ProcessComponent />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="terms" element={<TermsOfService />} />
+            <Route path="consultation" element={<Consultation />} />
+
+            {/* Catch-all 404 page */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
