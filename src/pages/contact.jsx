@@ -25,12 +25,12 @@ const ContactInfo = () => (
 // Main Contact Component
 const Contact = () => {
   return (
-    <Container className="contact-page py-5" style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
+    <Container className="contact-page py-5 m-5 " style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
       <Row className="g-5 align-items-center">
-        {/* Left Column: Contact Image */}
+     
         <Col lg={6} className="text-center">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.webp" 
             alt="Contact Us" 
             className="img-fluid rounded"
           />
