@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+
 import Layout from './layout/layout';
 import LoadingSpinner from './pages/looder'; 
 
@@ -18,7 +20,7 @@ const ProcessComponent = lazy(() => import('./pages/process'));
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
    
       <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
         <Routes>
@@ -41,7 +43,7 @@ function App() {
         </Routes>
       </Suspense>
   
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

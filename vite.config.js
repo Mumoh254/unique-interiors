@@ -8,6 +8,6 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    historyApiFallback: true, // Ensures proper routing
+    historyApiFallback: true, // Ensures React Router works after refresh
   },
 });
