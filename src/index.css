@@ -1340,6 +1340,7 @@ html{
   padding: 0.3rem !important;
   border:   2px  solid var(--navy-blue) !important;
   color:  var(--soft-white);
+  font-size: 1.2rem !important;
 }
 
 .bg:hover{
@@ -1760,4 +1761,11 @@ html{
 .btn2:hover{
   background: var(--heavy-orange) !important;
   
+}
+
+
+@media (max-width: 768px)   {
+  .btn2{
+    width: 80%  !important;
+  }
 }
