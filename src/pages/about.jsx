@@ -15,9 +15,9 @@ const About = () => (
       <Col xs={12} className="text-center">
         <h1 className="display-4 fw-bold mb-3" style={{ background: 'var(--gradient-yellow)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
           Crafting Spaces with Passion
-          <Badge style={{ backgroundColor: 'var(--heavy-orange)' }} className="ms-3 fs-5">Since 2020</Badge>
+          <Badge style={{ backgroundColor: 'var(--heavy-orange)' }} className="btn2">Since 2020</Badge>
         </h1>
-        <p className="lead" style={{ color: 'var(--soft-white)' }}>
+        <p className="lead" style={{ color: 'var(--navy-blue)' }}>
           Nairobi's Premier Interior Design Studio Transforming Visions into Reality
         </p>
       </Col>
@@ -55,7 +55,7 @@ const About = () => (
             </Suspense>
             Redefining Interior Spaces in Nairobi
           </h2>
-          <p className="lead" style={{ color: 'var(--soft-white)' }}>
+          <p className="lead" style={{ color: 'var(--navy-blue) !m' }}>
             At Unique Interiors, we blend contemporary African aesthetics with global design trends 
             to create spaces that tell your unique story. Our certified team brings expertise in:
           </p>
@@ -81,7 +81,7 @@ const About = () => (
             </Suspense>
             Our Design Philosophy
           </h3>
-          <Row className="g-4">
+          <Row className="">
             {[{
                 title: 'Client-Centric Approach',
                 content: 'We prioritize your vision through personalized consultations and 3D visualizations...'
@@ -129,8 +129,8 @@ const About = () => (
                 </ListGroup>
               </Col>
               <Col md={4} className="text-center">
-                <div className="achievement-badge p-4 rounded-circle shadow-lg" style={{ backgroundColor: 'var(--heavy-orange)', color: 'var(--soft-white)' }}>
-                  <div className="display-3 fw-bold">4.9</div>
+                <div className=" p-5  " style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
+                  <div className="display-1 fw-bold">4.9</div>
                   <div>Star Rating</div>
                   <div className="text-muted mt-2">Across Platforms</div>
                 </div>
