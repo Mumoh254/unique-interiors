@@ -1,7 +1,6 @@
-// ProcessComponent.jsx
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FiClipboard, FiLayout, FiPalette, FiHome } from 'react-icons/fi';
+import { FiClipboard, FiLayout, FiHome } from 'react-icons/fi';
 
 
 const ProcessComponent = () => {
@@ -17,7 +16,7 @@ const ProcessComponent = () => {
       description: "3D renderings and material selection based on your preferences"
     },
     {
-      icon: <FiPalette />,
+      icon: <FiHome />,
       title: "Design Refinement",
       description: "Material sampling and final design approvals with our expert team"
     },
@@ -48,12 +47,12 @@ const ProcessComponent = () => {
           
           {steps.map((step, index) => (
             <Col md={6} lg={3} key={index} className="process-step">
-              <div className="step-card p-4 bg-white rounded-4 shadow-sm">
-                <div className="step-number">{index + 1}</div>
+              <div className="step-card p-4 bg-soft-white rounded-4 shadow-sm">
+                <div className="step-number" style={{ color: 'var(--heavy-orange)' }}>{index + 1}</div>
                 <div className="step-icon mb-3">
-                  {React.cloneElement(step.icon, { className: 'text-primary', size: 40 })}
+                  {React.cloneElement(step.icon, { className: 'text-navy-blue', size: 40 })}
                 </div>
-                <h4 className="fw-bold mb-3">{step.title}</h4>
+                <h4 className="fw-bold mb-3" style={{ color: 'var(--navy-blue)' }}>{step.title}</h4>
                 <p className="text-muted mb-0">{step.description}</p>
               </div>
             </Col>

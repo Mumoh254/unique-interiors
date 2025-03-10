@@ -1612,12 +1612,12 @@ html{
 }
 
 .submit-button:hover {
-  background-color: var(--light-orange);
+  background-color: var(--navy-blue);
   transform: translateY(-2px);
 }
 
 .submit-button:disabled {
-  background-color: rgba(255, 107, 53, 0.5);
+  background-color:  var(--heavy-orange);
   cursor: not-allowed;
 }
 
@@ -1652,7 +1652,7 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background:   var(--soft-white);
   z-index: 9999;
   display: flex;
   justify-content: center;

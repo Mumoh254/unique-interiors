@@ -11,84 +11,93 @@ const projects = [
     title: 'Modern Apartment Makeover',
     image: '/images/kitchen.png',
     year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    excerpt: 'Complete transformation of a 3-bedroom apartment',
+    description: 'A contemporary kitchen renovation in the heart of Nairobi. Perfect for a modern lifestyle.'
   },
   { 
     id: 2,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Stylish Living Room Redesign',
     image: '/images/kitchen7.jpg',
     year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    excerpt: 'Stylish redesign of a spacious living room with minimalistic aesthetics.',
+    description: 'A living room that blends comfort and style with sustainable design and quality materials.'
   },
   { 
     id: 3,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Elegant Bedroom Transformation',
     image: '/images/kitchen6.jpg',
-    year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    year: '2024',
+    excerpt: 'A serene bedroom renovation with a focus on tranquility and elegance.',
+    description: 'The bedroom was transformed into a relaxing retreat with custom gypsum ceilings and feature lighting.'
   },
   { 
     id: 4,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Modern Bathroom Overhaul',
     image: '/images/kitchen5.jpg',
-    year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    year: '2024',
+    excerpt: 'Comprehensive bathroom renovation with sleek finishes and modern amenities.',
+    description: 'From the tiles to the gypsum ceiling, every detail was meticulously chosen to bring serenity.'
   },
   { 
     id: 5,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Luxury Kitchen Refurbishment',
     image: '/images/kitchen5.jpg',
-    year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    year: '2025',
+    excerpt: 'High-end kitchen renovation with premium finishes.',
+    description: 'State-of-the-art appliances and sustainable materials were used to create this dream kitchen.'
   },
   { 
     id: 6,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Mirror & Wardrobe Redesign',
     image: '/images/mirror.jpg',
     year: '2024',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    excerpt: 'A modern redesign of mirror installations and wardrobe solutions.',
+    description: 'Custom-built wardrobes and elegant mirror features that create a sleek, modern feel.'
   },
   { 
     id: 7,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Chic Wardrobe & Storage Solutions',
     image: '/images/wardrobe.jpg',
     year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    excerpt: 'Efficient use of space with stylish wardrobe and storage solutions.',
+    description: 'Incorporating gypsum ceiling work and tailored storage options to maximize space.'
   },
   { 
     id: 8,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Modern Apartment Makeover',
+    title: 'Luxury Kitchen Overhaul',
     image: '/images/kitchen4.jpg',
     year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment'
+    excerpt: 'Transforming an outdated kitchen into a luxurious culinary space.',
+    description: 'Incorporating top-of-the-line appliances, quartz countertops, and stylish pavements.'
   },
   { 
-    id: 0,
+    id: 9,
     category: 'Commercial',
     type: 'Office',
     title: 'Corporate Office Design',
     image: '/images/kitchen3.jpg',
     year: '2023',
-    excerpt: '2000 sq ft office space redesign'
+    excerpt: '2000 sq ft office space redesign.',
+    description: 'A sleek and modern office space that promotes productivity and creativity.'
   },
-  // Add more projects...
+  // More projects...
 ];
 
-const categories = ['All', 'Residential', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum'];
+const categories = ['All', 'Residential', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum', 'Pavements'];
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -113,16 +122,15 @@ export default function Projects() {
         <div className="mb-4 text-center">
           <ButtonGroup className="flex-wrap">
             {categories.map(cat => (
-             <Button
-             key={cat}
-             variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
-             onClick={() => setSelectedCategory(cat)}
-             className="category-button m-1 rounded-pill"
-             style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
-           >
-             {cat}
-           </Button>
-           
+              <Button
+                key={cat}
+                variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
+                onClick={() => setSelectedCategory(cat)}
+                className="category-button m-1 rounded-pill"
+                style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
+              >
+                {cat}
+              </Button>
             ))}
           </ButtonGroup>
         </div>
@@ -151,6 +159,7 @@ export default function Projects() {
                   <Card.Body>
                     <Card.Title>{project.title}</Card.Title>
                     <Card.Text>{project.excerpt}</Card.Text>
+                    <p>{project.description}</p>
                   </Card.Body>
                   <Card.Footer className="text-muted">
                     {project.category} • {project.type}

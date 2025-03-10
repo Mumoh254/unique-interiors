@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="footer-bottom">
+        <div className="footer-bottom py-4">
           <div className="legal-links">
             <a href="/terms">Terms of Service</a>
             <a href="/cookies">Cookie Policy</a>
@@ -87,7 +87,7 @@ const Footer = () => {
             <a href="/terms">Warranty</a>
             <a href="/upcoming">Upcoming</a>
           </div>
-          <p>© {new Date().getFullYear()} Unique Interiors Limited | All rights reserved | Unauthorized duplication or distribution is prohibited.</p>
+          <p className=" py-3 " >© {new Date().getFullYear()} Unique Interiors Limited | All rights reserved | Unauthorized duplication or distribution is prohibited.</p>
         </div>
       </footer>
     </>
