@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layout/layout';
 import LoadingSpinner from './pages/looder'; 
 
@@ -19,7 +19,7 @@ const ProcessComponent = lazy(() => import('./pages/process'));
 function App() {
   return (
     <BrowserRouter>
-    <Router>
+   
       <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
         <Routes>
           {/* Wrap all routes inside Layout */}
@@ -40,7 +40,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-    </Router>
+  
     </BrowserRouter>
   );
 }
