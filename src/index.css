@@ -1743,3 +1743,37 @@ html{
     width: 80%  !important;
   }
 }
+
+
+.btn3{
+  width: 50% !important;
+  padding: 1rem !important;
+  font-size: 1.2rem !important;
+  background-color: var(--navy-blue) !important;
+  border: none !important;
+  color: var(--soft-white) !important;
+}
+.btn3:hover{
+  background: var(--heavy-orange) !important;
+  
+}
+
+
+@media (min-width: 992px)   {
+  .btn3{
+    width: 30%  !important;
+  }
+}
+
+@media (min-width: 576px) { 
+  .btn3{
+    width: 10%  !important;
+  }
+ }
+
+ @media (max-width: 575.98px) { 
+  .btn3{
+    width: 10%  !important;
+    font-size: 1rem !important;
+  }
+ }

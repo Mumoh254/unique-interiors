@@ -126,7 +126,7 @@ export default function Projects() {
                 key={cat}
                 variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
                 onClick={() => setSelectedCategory(cat)}
-                className="category-button m-1 rounded-pill"
+                className="btn3 m-1 rounded-pill"
                 style={{ flex: '1 1 auto', minWidth: '100px' }} // Ensure buttons are flexible
               >
                 {cat}
