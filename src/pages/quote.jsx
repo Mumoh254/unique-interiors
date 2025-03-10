@@ -69,7 +69,7 @@ const Quote = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="John Doe"
+                   
                   />
                 </Form.Group>
               </Col>
@@ -82,7 +82,7 @@ const Quote = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="john@example.com"
+                   
                   />
                 </Form.Group>
               </Col>
