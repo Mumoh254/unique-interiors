@@ -1,17 +1,12 @@
 import React, { lazy, Suspense } from "react";
-
-// Lazy load Bootstrap components
 import { Container, Card, ListGroup, Badge } from "react-bootstrap";
-
+import  LoadingSpinner from "./looder"; // Import your custom loader
 
 // Lazy load Icons
 const GiContract = lazy(() => import("react-icons/gi").then(module => ({ default: module.GiContract })));
 const GiMoneyStack = lazy(() => import("react-icons/gi").then(module => ({ default: module.GiMoneyStack })));
 
-
-
 const TermsOfService = () => {
-
   const sections = [
     {
       title: "Initial Consultation & Site Visit",
@@ -31,11 +26,10 @@ const TermsOfService = () => {
         "3% late fee per month",
       ],
     },
-    // Add other sections...
   ];
 
   return (
-    <Suspense fallback={<div>Loading Terms of Service...</div>}>
+    <Suspense fallback={<LoadingSpinner />}> {/* Use your custom Loader component here */}
       <Container className="py-5">
         <h2 className="text-center mb-5 display-4 fw-bold">Terms of Service</h2>
 
