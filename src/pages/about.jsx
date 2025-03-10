@@ -108,10 +108,10 @@ const About = () => (
     {/* Achievements Section */}
     <Row className="g-4 mt-5">
       <Col md={12}>
-        <Card className="border-0 text-white overflow-hidden" style={{ backgroundColor: 'var(--dark-overlay)' }}>
-          <Card.Body className="p-5">
-            <Row className="g-4 align-items-center">
-              <Col md={8}>
+        <Card className="border-0 text-white overflow-hidden   ">
+          <Card.Body className="py-5 ">
+            <Row className="g-4 align-items-center ">
+              <Col md={8} className='p-5'  style={{ backgroundColor: 'var(--navy-blue)' }}>
                 <h2 className="fw-bold mb-3" style={{ color: 'var(--light-orange)' }}>Our Achievements</h2>
                 <ListGroup variant="flush" className="achievement-list">
                   {[
