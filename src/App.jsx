@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 
 import Layout from './layout/layout';
 import LoadingSpinner from './pages/looder'; 
+import ScrollToTop from "./pages/scrollTop";
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/home'));
@@ -23,6 +24,7 @@ function App() {
     <HashRouter>
    
       <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
+      <ScrollToTop />
         <Routes>
           {/* Wrap all routes inside Layout */}
           <Route path="/" element={<Layout />}>
@@ -41,6 +43,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
+
       </Suspense>
   
     </HashRouter>
