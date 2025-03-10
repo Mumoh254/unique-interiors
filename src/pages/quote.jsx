@@ -183,7 +183,7 @@ const Quote = () => {
                 </Form.Group>
               </Col>
               <Col md={12} className="text-start mt-4">
-                <Button variant="primary" type="submit" className="submit-button" disabled={loading}>
+                <Button variant="primary" type="submit" className="btn2" disabled={loading}>
                   {loading ? <Spinner animation="border" size="sm" className="me-2" /> : <FaPaperPlane className="me-2" />}
                   {loading ? "Sending..." : "Submit Request"}
                 </Button>

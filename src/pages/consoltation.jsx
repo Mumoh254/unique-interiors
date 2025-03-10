@@ -220,7 +220,7 @@ const Consultation = () => {
 
             <Button 
               type="submit" 
-              className="submit-btn"
+              className="btn2"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Book Consultation'}
