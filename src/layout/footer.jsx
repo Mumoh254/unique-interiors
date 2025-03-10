@@ -33,15 +33,21 @@ const Footer = () => {
 
             {/* Direct Map Embed */}
             <div className="map-container">
-              <iframe
-                title="Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.123456789012!2d10.1234567!3d52.654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM5JzE1LjYiTiAxMMKwMDcnMjkuNiJF!5e0!3m2!1sen!2sde!4v1234567890123!5m2!1sen!2sde"
-                width="250"
-                height="150"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe>
+            <iframe
+  title="Google Map"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.3586903801!2d36.6825803462532!3d-1.3028602815090562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!5e0!3m2!1sen!2ske"
+  width="100%"
+  height="450"
+  style={{ 
+    border: 0, 
+    filter: "grayscale(40%) contrast(1.2) brightness(1.1)", // Balanced filter
+    borderRadius: "10px" // Optional rounded corners
+  }} 
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
             </div>
           </div>
 

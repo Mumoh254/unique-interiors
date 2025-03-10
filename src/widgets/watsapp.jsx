@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { IoMdClose } from 'react-icons/io'; 
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+
+const FaWhatsapp = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaWhatsapp })));
+const IoMdClose = lazy(() => import('react-icons/io').then(module => ({ default: module.IoMdClose })));
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,15 +23,19 @@ const WhatsAppWidget = () => {
   return (
     <div className={`whatsapp-widget ${isOpen ? 'show' : 'hidden'}`}>
       <div className="widget-header" onClick={() => setIsOpen(!isOpen)}>
-        <FaWhatsapp className="whatsapp-icon" />
+        <Suspense fallback={<div>...</div>}>
+          <FaWhatsapp className="whatsapp-icon" />
+        </Suspense>
         <span>Need Help?</span>
       </div>
 
       {isOpen && (
         <div className="widget-content">
           <div className="widget-top">
-            <p className=' text-white ' >How can we help you today?</p>
-            <IoMdClose className="close-icon text-white " onClick={() => setIsOpen(false)} /> 
+            <p className='text-white'>How can we help you today?</p>
+            <Suspense fallback={<div>...</div>}>
+              <IoMdClose className="close-icon text-white" onClick={() => setIsOpen(false)} />
+            </Suspense>
           </div>
 
           <input
