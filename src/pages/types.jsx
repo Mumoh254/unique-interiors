@@ -125,7 +125,7 @@ const ProjectTypes = () => {
 
       {/* Flexbox Container for Arrow and Button */}
       <div className="d-flex align-items-center justify-content-between">
-        {/* Animated Arrow and Text */}
+    
         <div className="arrow-container">
           <div className="text-muted small mb-2">Explore Our Projects</div>
           <div className="thin-arrow"></div>

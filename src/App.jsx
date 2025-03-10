@@ -23,10 +23,10 @@ function App() {
   return (
     <HashRouter>
    
-      <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
+      <Suspense fallback={<LoadingSpinner />}> 
       <ScrollToTop />
         <Routes>
-          {/* Wrap all routes inside Layout */}
+        
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="quote" element={<Quote />} />
@@ -39,7 +39,7 @@ function App() {
             <Route path="terms" element={<TermsOfService />} />
             <Route path="consultation" element={<Consultation />} />
 
-            {/* Catch-all 404 page */}
+            {/*  404 page */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -9,7 +9,6 @@
 }
 
 
-
 :root {
   --navy-blue: #0a192f;
   --heavy-orange: #ff6b35;
@@ -17,9 +16,7 @@
   --gradient-yellow: linear-gradient(135deg, #ffd93d 0%, #ff6b35 100%);
   --soft-white: #f8f9fa;
   --dark-overlay: rgba(10, 25, 47, 0.85);
-  --small-font:  1.8rem;
 }
-
 
 /*   basit  subset  start */
 body{
@@ -37,23 +34,7 @@ html{
 }
 
 
-/*   basit  subset    end   */
 
-
-/*    come  start  */
-
-
-/* Global Styles */
-/* Global Styles */
-/* Global Styles */
-:root {
-  --navy-blue: #0a192f;
-  --heavy-orange: #ff6b35;
-  --light-orange: #ffd93d;
-  --gradient-yellow: linear-gradient(135deg, #ffd93d 0%, #ff6b35 100%);
-  --soft-white: #f8f9fa;
-  --dark-overlay: rgba(10, 25, 47, 0.85);
-}
 
 
 .layout-container{
@@ -63,7 +44,6 @@ html{
 }
 
 /* Home Container */
-/* Home Container */
 .home-container {
   position: relative;
   height: 100vh;
@@ -71,7 +51,7 @@ html{
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Adding will-change property to optimize for video */
+ 
   will-change: transform, opacity;
 }
 
@@ -81,7 +61,7 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(6, 6, 29, 0.26); /* Dark overlay */
+  background: rgba(6, 6, 29, 0.26); 
   z-index: 1;
 }
 
@@ -93,7 +73,7 @@ html{
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  /* Defer video loading */
+
   loading: lazy;
 }
 
@@ -102,7 +82,7 @@ html{
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--soft-white); /* Soft white */
+  color: var(--soft-white); 
   padding: 0 1rem;
 }
 
@@ -111,7 +91,7 @@ html{
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  /* Make sure the font is loaded quickly */
+
   font-family: system-ui, sans-serif;
   font-display: swap;
   will-change: transform;
@@ -134,7 +114,7 @@ html{
 }
 
 .custom-btn {
-  background-color: var(--heavy-orange); /* Heavy orange */
+  background-color: var(--navy-blue); 
   border: none;
   font-weight: 600;
   padding: 1rem 2rem;
@@ -145,12 +125,12 @@ html{
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* Avoid reflow on hover */
+
   will-change: transform;
 }
 
 .custom-btn:hover {
-  background-color: var(--navy-blue); /* Light orange */
+  background-color: var(--heavy-orange); 
   transform: translateY(-2px);
   color: var(--soft-white);
 }
@@ -239,7 +219,7 @@ html{
 }
 
 
-/* Header.css */
+
 
 /* logo */
 .logo {
@@ -262,7 +242,6 @@ html{
   width: 30px;
   cursor: pointer;
   
- 
 }
 
 .hamburger span {
@@ -304,52 +283,52 @@ html{
 
 /* WhatsAppWidget.css */
 
-/* Optimized WhatsApp Widget */
+
 .whatsapp-widget {
   position: fixed;
   bottom: 10%;
   right: 10px;
-  background: #19b150; /* Use a specific green for consistency */
+  background: #19b150; 
   color: white;
   font-weight: 600;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  z-index: 1000; /* Keep it on top */
-  padding: 5px; /* Consistent padding */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition only necessary properties */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; 
+  padding: 5px; 
+  transition: transform 0.3s ease, opacity 0.3s ease; 
   overflow: hidden;
 }
 
 /* Widget Header */
 .widget-header {
-  padding: 5px 10px; /* Add more space for a cleaner look */
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 .whatsapp-icon {
-  font-size: 20px; /* Increase icon size for better visibility */
-  margin-right: 10px; /* Less margin for better spacing */
+  font-size: 20px; 
+  margin-right: 10px;
 }
 
 /* Widget Content */
 .widget-content {
-  padding: 5px 10px; /* Add padding for better spacing */
+  padding: 5px 10px;
   color: var(--navy-blue);
 }
 
 .widget-content input {
-  border: 1px solid #ccc; /* Add subtle border for clarity */
+  border: 1px solid #ccc;
   margin-top: 2px;
   border-radius: 5px;
   outline: none;
-  padding: 3px 8px; /* Add padding to input */
-  transition: border-color 0.3s ease; /* Smooth border transition */
+  padding: 3px 8px;
+  transition: border-color 0.3s ease;
 }
 
 .widget-content input:focus {
-  border-color: #128C7E; /* Highlight input border on focus */
+  border-color: #128C7E; 
 }
 
 /* WhatsApp Button */
@@ -357,17 +336,17 @@ html{
   display: block;
   background: #128C7E;
   color: white;
-  padding: 8px 15px; /* Increased padding for better touch targets */
+  padding: 8px 15px;
   border-radius: 10px;
   text-align: center;
   border: none;
   text-decoration: none;
-  margin-top: 10px; /* Adjusted margin for better spacing */
+  margin-top: 10px; 
   transition: background 0.3s ease;
 }
 
 .whatsapp-button:hover {
-  background: #075E54; /* Darker shade on hover for feedback */
+  background: #075E54; 
 }
 
 
@@ -378,8 +357,6 @@ html{
 
 
 /* DatePicker Custom Styles */
-
-
 
 .react-datepicker {
   background-color: var(--navy-blue) !important;
@@ -720,10 +697,7 @@ html{
 }
 
 
-
 /*    consoltation end   */
-
-
 
 
 
@@ -1045,7 +1019,7 @@ html{
 
 /* Hero Section Before Footer */
 .hero-section {
-  height: 400px; /* Adjust height as needed */
+  height: 400px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1288,14 +1262,14 @@ html{
   min-width: 100px;
 }
 
-/* Styles for btn-primary */
+
 .category-button.btn-primary {
   background-color: var(--heavy-orange);
   border-color: var(--soft-white);
   color: var(--soft-white);
 }
 
-/* Hover effect for btn-primary */
+
 .category-button.btn-primary:hover {
   background-color: var(--light-orange);
   border-color: var(--navy-blue);
@@ -1320,7 +1294,7 @@ html{
 @media (max-width: 768px) {
   .category-button {
     padding: 0.5rem 1rem; 
-    font-size: 1rem;  /* Allow buttons to be more compact */
+    font-size: 1rem; 
   }
 }
 
@@ -1373,22 +1347,22 @@ html{
 
 .testimonial-card {
   background-color: var(--soft-white);
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border: 1px solid rgba(0, 0, 0, 0.1); 
   border-radius: 0.5rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .testimonial-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+  transform: translateY(-2px); 
 }
 
 .testimonial-feedback {
   font-size: 1rem;
   color: var(--navy-blue);
-  line-height: 1.6; /* Improved readability */
+  line-height: 1.6; 
   margin-bottom: 1rem;
 }
 
@@ -1458,23 +1432,23 @@ html{
 }
 
 .faq-item {
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Smaller, subtle border */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .faq-header {
   background-color: var(--soft-white);
   border: none;
-  padding: 1.25rem 1.5rem; /* Adjusted padding */
+  padding: 1.25rem 1.5rem; 
   cursor: pointer;
 }
 
@@ -1494,7 +1468,7 @@ html{
   font-size: 1rem;
   color: var(--navy-blue);
   margin: 0;
-  line-height: 1.6; /* Improved readability */
+  line-height: 1.6;
 }
 
 /* Icon Colors */
