@@ -1335,15 +1335,17 @@ html{
 
 
 .bg{
-  background: transparent !important;
+  background: var(--navy-blue) !important;
+ 
   padding: 0.3rem !important;
-  border:   2px  solid var(--heavy-orange) !important;
+  border:   2px  solid var(--navy-blue) !important;
   color:  var(--soft-white);
 }
 
 .bg:hover{
   background: var(--heavy-orange) !important;
   transition: 1s;
+  border: none  !important;
 }
 .bgc{
   background:  var(--heavy-orange) !important;
@@ -1744,4 +1746,18 @@ html{
 .map-container iframe {
   filter: grayscale(1%) contrast(1.1) !important;
   border-radius: 10px;
+}
+
+
+.btn2{
+  width: 50% !important;
+  padding: 1rem !important;
+  font-size: 1.2rem !important;
+  background-color: var(--navy-blue) !important;
+  border: none !important;
+  color: var(--soft-white) !important;
+}
+.btn2:hover{
+  background: var(--heavy-orange) !important;
+  
 }

@@ -52,7 +52,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <p className="sub-text">Where Innovation Meets Timeless Design</p>
+            <p className="sub-text">Where Innovation Meets Timeless Design .</p>
           </motion.div>
 
           <motion.div
@@ -76,7 +76,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Lazy loading essential components first */}
+  
       <Suspense fallback={<div>Loading WhatsApp Widget...</div>}>
         <WhatsAppWidget />
       </Suspense>
@@ -85,7 +85,7 @@ const Home = () => {
         <ProjectTypes />
       </Suspense>
 
-      {/* Lazy load Testimonials and FAQ components after the main content */}
+    
       <Suspense fallback={<div>Loading Testimonials...</div>}>
         <Testimonials />
       </Suspense>

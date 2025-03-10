@@ -132,9 +132,7 @@ const ProjectTypes = () => {
         </div>
 
         {/* View Projects Button */}
-        <Button
-          size="lg"
-          className="custom-btn"
+        <Button className="btn2"
           onClick={handleViewProjects}
         >
           View Our Recent Projects
