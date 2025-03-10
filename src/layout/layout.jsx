@@ -4,11 +4,13 @@ import Footer from './footer';
 
 function Layout() {
   return (
-    <>
+    <div className="layout-container">
       <Header />
-      <Outlet /> {/* This renders the current route's component */}
+      <main>
+        <Outlet /> {/* Renders the current route's component */}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

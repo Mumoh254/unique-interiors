@@ -18,6 +18,7 @@ const ProcessComponent = lazy(() => import('./pages/process'));
 
 function App() {
   return (
+    <BrowserRouter>
     <Router>
       <Suspense fallback={<LoadingSpinner />}> {/* Loader while loading routes */}
         <Routes>
@@ -40,6 +41,7 @@ function App() {
         </Routes>
       </Suspense>
     </Router>
+    </BrowserRouter>
   );
 }
 
