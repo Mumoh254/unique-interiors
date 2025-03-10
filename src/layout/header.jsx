@@ -29,7 +29,7 @@ const Header = () => {
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           aria-expanded={isOpen}
-          onClick={handleToggle} // Use the optimized toggle function
+          onClick={handleToggle} 
         >
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>
             <span></span>
