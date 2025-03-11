@@ -21,7 +21,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleLinkClick} className="brand-logo">
           <img src="/images/logo.webp" alt="Unique Interiors Logo" className="logo" />
-          Unique Interiors
+          Unique Interiors Solutions
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={isOpen} onClick={handleToggle}>
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>

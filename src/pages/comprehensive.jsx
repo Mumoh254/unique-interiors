@@ -24,7 +24,7 @@ const ComprehensivePackage = () => {
   );
 
   return (
-    <div className="comprehensive-package">
+    <div className="comprehensive-package mt-5 ">
       {/* Hero Section */}
       <div className="hero-section position-relative text-center text-white d-flex align-items-center justify-content-center">
         <div className="overlay"></div>
