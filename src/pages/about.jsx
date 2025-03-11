@@ -25,29 +25,8 @@ const About = () => (
 
     {/* About Content Section */}
     <Row className="g-5 align-items-center mb-5">
-      {/* Image Section */}
-      <Col lg={6} className="position-relative">
-        <div className="image-container">
-          <img 
-            src="/images/logo.webp" 
-            alt="Our design team working" 
-            className="img-fluid rounded-4 shadow-lg hover-transform"
-            loading="lazy"
-            decoding="async"
-            width="600"
-            height="400"
-          />
-          <div className="experience-badge text-white p-3 rounded-pill shadow-sm" style={{ backgroundColor: 'var(--heavy-orange)' }}>
-            <Suspense fallback={<LoadingSpinner />}>
-              <FiAward className="me-2" />
-            </Suspense>
-            150+ Successful Projects
-          </div>
-        </div>
-      </Col>
-      
       {/* Text Section */}
-      <Col lg={6}>
+      <Col lg={12}>
         <div className="ps-lg-4">
           <h2 className="fw-bold mb-4" style={{ color: 'var(--light-orange)' }}>
             <Suspense fallback={<span>...</span>}>
@@ -62,7 +41,7 @@ const About = () => (
           
           {/* Expertise Grid */}
           <Row className="g-4 mb-4">
-            {['Residential Transformations', 'Commercial Design Solutions'].map((item, index) => (
+            {[ 'Residential Transformations', 'Commercial Design Solutions' ].map((item, index) => (
               <Col md={6} key={index}>
                 <div className="d-flex align-items-center p-3 rounded-3 shadow-sm" style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
                   <Suspense fallback={<span>...</span>}>
@@ -81,7 +60,7 @@ const About = () => (
             </Suspense>
             Our Design Philosophy
           </h3>
-          <Row className="">
+          <Row>
             {[{
                 title: 'Client-Centric Approach',
                 content: 'We prioritize your vision through personalized consultations and 3D visualizations...'
@@ -108,17 +87,13 @@ const About = () => (
     {/* Achievements Section */}
     <Row className="g-4 mt-5">
       <Col md={12}>
-        <Card className="border-0 text-white overflow-hidden   ">
-          <Card.Body className="py-5 ">
-            <Row className="g-4 align-items-center ">
-              <Col md={8} className='p-5'  style={{ backgroundColor: 'var(--navy-blue)' }}>
+        <Card className="border-0 text-white overflow-hidden">
+          <Card.Body className="py-5">
+            <Row className="g-4 align-items-center">
+              <Col md={8} className='p-5' style={{ backgroundColor: 'var(--navy-blue)' }}>
                 <h2 className="fw-bold mb-3" style={{ color: 'var(--light-orange)' }}>Our Achievements</h2>
                 <ListGroup variant="flush" className="achievement-list">
-                  {[
-                    '2023 Kenya Interior Design Excellence Award',
-                    '500+ Satisfied Clients Across East Africa',
-                    '98% Client Satisfaction Rate'
-                  ].map((item, index) => (
+                  {[ '2023 Kenya Interior Design Excellence Award', '500+ Satisfied Clients Across East Africa', '98% Client Satisfaction Rate' ].map((item, index) => (
                     <ListGroup.Item key={index} className="bg-transparent d-flex align-items-center text-white">
                       <Suspense fallback={<span>...</span>}>
                         {index === 0 ? <FiAward className="text-warning" /> : index === 1 ? <FiUsers className="text-warning" /> : <FiCheck className="text-warning" />}
@@ -129,7 +104,7 @@ const About = () => (
                 </ListGroup>
               </Col>
               <Col md={4} className="text-center">
-                <div className=" p-5  " style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
+                <div className="p-5" style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
                   <div className="display-1 fw-bold">4.9</div>
                   <div>Star Rating</div>
                   <div className="text-muted mt-2">Across Platforms</div>
