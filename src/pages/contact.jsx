@@ -1,71 +1,68 @@
 import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 // Contact Info Component
 const ContactInfo = () => (
-  <div className="contact-info mt-5">
-    <h4 className="mb-3 text-light">
+  <Card className="bg-light p-4 mt-4 shadow-sm">
+    <h4 className="mb-3 text-dark">
       <FaMapMarkerAlt aria-label="Location" /> Our Office
     </h4>
-    <p className="text-light">Nairobi, Kenya</p>
+    <p className="text-muted">Nairobi, Kenya</p>
     
-    <h4 className="mb-3 text-light">
+    <h4 className="mb-3 text-dark">
       <FaEnvelope aria-label="Email" /> Email
     </h4>
-    <p className="text-light">uniqueinteriors@gmail.com</p>
+    <p className="text-muted">uniqueinteriors@gmail.com</p>
     
-    <h4 className="mb-3 text-light">
+    <h4 className="mb-3 text-dark">
       <FaPhone aria-label="Phone" /> Phone
     </h4>
-    <p className="text-light">+254740045355</p>
-  </div>
+    <p className="text-muted">+254740045355</p>
+  </Card>
 );
 
 // Main Contact Component
 const Contact = () => {
   return (
-    <Container className="contact-page py-5 m-5 " style={{ backgroundColor: 'var(--navy-blue)', color: 'var(--soft-white)' }}>
-      <Row className="g-5 align-items-center">
-     
-        <Col lg={6} className="text-center">
-          <img 
-            src="/images/logo.webp" 
-            alt="Contact Us" 
-            className="img-fluid rounded"
-          />
-        </Col>
-        
-        {/* Right Column: Contact Form and Info */}
-        <Col lg={6}>
-          <h2 className="section-title mb-4 text-light">Get in Touch</h2>
-          
-          {/* Contact Form */}
-          <Form className="contact-form p-2 ">
-            <Form.Group className="mb-3" controlId="formName">
-              <Form.Label className="text-light" htmlFor="name">Name</Form.Label>
-              <Form.Control type="text" id="name" required />
-            </Form.Group>
+    <Container className="contact-page py-5">
+      <Card className="shadow-lg border-0">
+        <Card.Header className="bg text-white text-center">
+          <h2>Get in Touch</h2>
+        </Card.Header>
+        <Card.Body>
+          <Row className="g-5 align-items-center me-3">
+            <Col lg={6}>
+              {/* Contact Form */}
+              <Form className="contact-form p-3">
+                <Form.Group className="mb-3" controlId="formName">
+                  <Form.Label className="text-dark" htmlFor="name">Name</Form.Label>
+                  <Form.Control type="text" id="name" required />
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label className="text-light" htmlFor="email">Email</Form.Label>
-              <Form.Control type="email" id="email" required />
-            </Form.Group>
+                <Form.Group className="mb-3" controlId="formEmail">
+                  <Form.Label className="text-dark" htmlFor="email">Email</Form.Label>
+                  <Form.Control type="email" id="email" required />
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formMessage">
-              <Form.Label className="text-light" htmlFor="message">Message</Form.Label>
-              <Form.Control as="textarea" id="message" rows={4} required />
-            </Form.Group>
+                <Form.Group className="mb-3" controlId="formMessage">
+                  <Form.Label className="text-dark" htmlFor="message">Message</Form.Label>
+                  <Form.Control as="textarea" id="message" rows={4} required />
+                </Form.Group>
 
-            <Button variant="primary" type="submit" className="w-100 mt-3" style={{ backgroundColor: 'var(--heavy-orange)', border: 'none' }}>
-              Send Message
-            </Button>
-          </Form>
+                <Button variant="primary" type="submit" className="w-100 mt-3 btn2">
+                  Send Message
+                </Button>
+              </Form>
+            </Col>
 
-          {/* Contact Info Section */}
-          <ContactInfo />
-        </Col>
-      </Row>
+            {/* Right Column: Contact Info */}
+            <Col lg={6}>
+              <ContactInfo />
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
     </Container>
   );
 };

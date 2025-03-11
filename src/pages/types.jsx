@@ -51,12 +51,8 @@ const ProjectTypes = () => {
       title: 'Floor Tiling',
       description: 'Installing beautiful and long-lasting floor tiles for any space.',
       image: '/images/tiling.webp',
-    },
-    {
-      title: 'Cabros Paving',
-      description: 'Designing durable and aesthetically pleasing outdoor cabros paving.',
-      image: '/images/kitchen.jpg',
-    },
+    }
+
   ];
 
   useEffect(() => {
