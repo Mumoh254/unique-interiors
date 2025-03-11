@@ -35,7 +35,7 @@ const TermsOfService = () => {
 
         {sections.map((section, index) => (
           <Card key={index} className="mb-4 shadow-lg border-0 rounded-3">
-            <Card.Header className="d-flex align-items-center bg-primary text-white">
+            <Card.Header className="d-flex align-items-center bg text-white">
               <div className="me-3">{section.icon}</div>
               <h3 className="mb-0">{section.title}</h3>
             </Card.Header>

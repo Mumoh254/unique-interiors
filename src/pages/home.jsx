@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import  ComprehensivePackage  from './comprehensive'
 
 // Lazy load less important components
 const Testimonials = lazy(() => import('./testmonials')); // Lazy load Testimonials component
@@ -76,6 +77,7 @@ const Home = () => {
         </div>
       </div>
 
+<ComprehensivePackage />
   
       <Suspense fallback={<div>Loading WhatsApp Widget...</div>}>
         <WhatsAppWidget />
