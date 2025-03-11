@@ -50,7 +50,8 @@ const Contact = () => {
                   <Form.Control as="textarea" id="message" rows={4} required />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100 mt-3 btn2">
+                <Button variant="primary" type="submit" className="w-100 mt-3 btn2"
+                >
                   Send Message
                 </Button>
               </Form>

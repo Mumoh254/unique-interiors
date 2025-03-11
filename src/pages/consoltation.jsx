@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import { FaUser, FaEnvelope, FaPhone, FaHome, FaCalendarAlt, FaToolbox } from 'react-icons/fa';
 import LoadingSpinner from './looder';
+import { FaPaperPlane } from "react-icons/fa";
 
 // Kenyan Counties array (full list preserved)
 const kenyanCounties = [
@@ -219,12 +220,13 @@ const Consultation = () => {
             </div>
 
             <Button 
-              type="submit" 
-              className="btn2"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Sending...' : 'Book Consultation'}
-            </Button>
+  type="submit" 
+  className="btn2 d-flex align-items-center"
+  disabled={isSubmitting}
+>
+  <FaPaperPlane className="me-2" />
+  {isSubmitting ? "Sending..." : " Book  Consoltation"}
+</Button>
           </Form>
         )}
       </Formik>
