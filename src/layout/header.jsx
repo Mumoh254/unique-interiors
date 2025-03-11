@@ -50,7 +50,7 @@ const Header = () => {
                 {label}
               </Nav.Link>
             ))}
-            <Nav.Link href="tel:+254710772575" onClick={handleLinkClick} className="nav-link-custom px-4 call-btn">
+            <Nav.Link href="tel:+254710772575" onClick={handleLinkClick} className="nav-link-custom px-3 call-btn">
               Call
             </Nav.Link>
           </Nav>
