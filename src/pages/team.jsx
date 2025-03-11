@@ -20,7 +20,7 @@ const teamMembers = [
     {
       name: "Dan",
       role: "Chief Officer  Design  Fittings ",
-      img: "/images/team.jpg",
+      img: "/images/team.webp",
       socials: {
         facebook: "#",
         twitter: "#",
@@ -30,7 +30,7 @@ const teamMembers = [
     {
       name: " Design and  Implementation Team ",
       role: "Lead Team",
-      img: "/images/tema2.jpg",
+      img: "/images/tema2.webp",
       socials: {
         facebook: "#",
         twitter: "#",
@@ -58,17 +58,19 @@ const Team = () => {
               >
                 <Card className="h-100 shadow-sm border-0">
                   <div className="position-relative">
-                    <Card.Img
-                      variant="top"
-                      src={member.img}
-                      alt={member.name}
-                      className=" w-100 mx-auto mt-4 border  "
-                      style={{
-                        objectFit: "cover",
-                        width: "1200px",
-                        height: "250px",
-                      }}
-                    />
+                  <Card.Img
+  variant="top"
+  src={member.img}
+  alt={member.name}
+  className="w-100 mx-auto mt-4 border"
+  style={{
+    objectFit: "cover",
+    width: "100%",
+    height: "250px",
+  }}
+  loading="lazy"
+/>
+
                   </div>
                   <Card.Body className="py-4">
                     <Card.Title className="fs-5 fw-bold mb-2">

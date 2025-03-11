@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { Container, Card, ListGroup, Badge } from "react-bootstrap";
-import  LoadingSpinner from "./looder"; // Import your custom loader
+import LoadingSpinner from "./looder"; // Import your custom loader
 
 // Lazy load Icons
 const GiContract = lazy(() => import("react-icons/gi").then(module => ({ default: module.GiContract })));
@@ -10,7 +10,7 @@ const TermsOfService = () => {
   const sections = [
     {
       title: "Initial Consultation & Site Visit",
-      icon: <GiContract />,
+      icon: GiContract, // ✅ Store reference instead of JSX
       items: [
         "Site visit required for space assessment",
         "Free consultation for projects over 1M KES",
@@ -19,7 +19,7 @@ const TermsOfService = () => {
     },
     {
       title: "Payment Terms",
-      icon: <GiMoneyStack />,
+      icon: GiMoneyStack, // ✅ Store reference instead of JSX
       items: [
         "50% initial deposit required",
         "Balance due upon completion",
@@ -29,28 +29,36 @@ const TermsOfService = () => {
   ];
 
   return (
-    <Suspense fallback={<LoadingSpinner />}> {/* Use your custom Loader component here */}
+    <Suspense fallback={<LoadingSpinner />}>
       <Container className="py-5">
         <h2 className="text-center mb-5 display-4 fw-bold">Terms of Service</h2>
 
-        {sections.map((section, index) => (
-          <Card key={index} className="mb-4 shadow-lg border-0 rounded-3">
-            <Card.Header className="d-flex align-items-center bg text-white">
-              <div className="me-3">{section.icon}</div>
-              <h3 className="mb-0">{section.title}</h3>
-            </Card.Header>
-            <Card.Body>
-              <ListGroup variant="flush">
-                {section.items.map((item, idx) => (
-                  <ListGroup.Item key={idx} className="d-flex align-items-center py-3">
-                    <Badge bg="primary" className="me-3">{idx + 1}</Badge>
-                    {item}
-                  </ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Card.Body>
-          </Card>
-        ))}
+        {sections.map((section, index) => {
+          const IconComponent = section.icon; // ✅ Convert reference to component
+
+          return (
+            <Card key={index} className="mb-4 shadow-lg border-0 rounded-3">
+              <Card.Header className="d-flex align-items-center bg text-white">
+                <div className="me-3">
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <IconComponent /> {/* ✅ Render icon correctly */}
+                  </Suspense>
+                </div>
+                <h3 className="mb-0">{section.title}</h3>
+              </Card.Header>
+              <Card.Body>
+                <ListGroup variant="flush">
+                  {section.items.map((item, idx) => (
+                    <ListGroup.Item key={idx} className="d-flex align-items-center py-3">
+                      <Badge bg="primary" className="me-3">{idx + 1}</Badge>
+                      {item}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          );
+        })}
 
         <Card className="mt-5 border-warning">
           <Card.Body className="text-center">

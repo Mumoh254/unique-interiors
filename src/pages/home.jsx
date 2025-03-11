@@ -2,14 +2,14 @@ import React, { lazy, Suspense, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import  ComprehensivePackage  from './comprehensive'
-
+import   ProjectTypes  from './types'
 // Lazy load less important components
 const Testimonials = lazy(() => import('./testmonials')); // Lazy load Testimonials component
 const FAQ = lazy(() => import('./faq')); // Lazy load FAQ component
 
 // Immediately load essential components
 const WhatsAppWidget = lazy(() => import('../widgets/watsapp')); // Lazy load WhatsApp widget
-const ProjectTypes = lazy(() => import('./types')); // Lazy load Project Types component
+// const ProjectTypes = lazy(() => import('./types')); // Lazy load Project Types component
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Home = () => {
         <div className="video-overlay">  </div>
         <video 
   autoPlay 
-  loop 
+  loop
   muted 
   playsInline 
   className="background-video" 
@@ -94,9 +94,15 @@ const Home = () => {
 
       <Suspense fallback={<div>Loading FAQ...</div>}>
         <FAQ />
+
+
       </Suspense>
+      
+
     </>
+
   );
+
 };
 
 export default Home;

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Container, Row, Col, Card, Button, Badge, ButtonGroup, Spinner } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import SpinnerLoader from "./looder"; // Assuming your loading component is here
+import SpinnerLoader from "./looder"; 
 
 
 const projects = [
@@ -95,8 +95,7 @@ const projects = [
     year: '2023',
     excerpt: '2000 sq ft office space redesign.',
     description: 'A sleek and modern office space that promotes productivity and creativity.'
-  },
-  // More projects...
+  }
 ];
 
 const categories = ['All', 'Residential', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum', 'Pavements'];

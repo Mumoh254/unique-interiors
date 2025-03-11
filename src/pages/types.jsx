@@ -1,17 +1,24 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import './types.css'; // Ensure this path is correct
+
 
 // Lazy load image
 const loadImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.src = src;
-    img.onload = () => resolve(src);
-    img.onerror = () => reject('Image failed to load');
+    img.onload = () => {
+      console.log(`Loaded: ${src}`);
+      resolve(src);
+    };
+    img.onerror = (err) => {
+      console.error(`Error loading ${src}:`, err);
+      reject('Image failed to load');
+    };
   });
 };
+
 
 const ProjectTypes = () => {
   const navigate = useNavigate();
@@ -30,7 +37,7 @@ const ProjectTypes = () => {
     {
       title: 'Office Projects',
       description: 'Designing workspaces that inspire productivity and creativity.',
-      image: '/images/ofiice.png',
+      image: '/images/ofiice.webp',
     },
     {
       title: 'House Renovation',
@@ -40,7 +47,7 @@ const ProjectTypes = () => {
     {
       title: 'Construction',
       description: 'Building robust and sustainable structures from the ground up.',
-      image: '/images/construction.webp',
+      image: '/images/masterbedrooom.webp',
     },
     {
       title: 'Gypsum Works',
@@ -50,7 +57,7 @@ const ProjectTypes = () => {
     {
       title: 'Floor Tiling',
       description: 'Installing beautiful and long-lasting floor tiles for any space.',
-      image: '/images/tiling.webp',
+      image: '/images/kitchen3.webp',
     }
 
   ];
