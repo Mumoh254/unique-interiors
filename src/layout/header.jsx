@@ -38,6 +38,7 @@ const Header = () => {
               { path: "/projects", label: "Projects" },
               { path: "/process", label: "Process" },
               { path: "/contact", label: "Contact" },
+              { path: "/team", label: "Our-Team" },
             ].map(({ path, label }) => (
               <Nav.Link
                 key={path}

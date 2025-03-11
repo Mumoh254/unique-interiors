@@ -18,6 +18,7 @@ const Projects = lazy(() => import('./pages/projects'));
 const TermsOfService = lazy(() => import('./pages/terms'));
 const CookiesPolicy = lazy(() => import('./pages/cookies'));
 const ProcessComponent = lazy(() => import('./pages/process'));
+const Team  =  lazy(() => import('./pages/team') )
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="faq" element={<FAQ />} />
             <Route path="contact" element={<Contact />} />
             <Route path="terms" element={<TermsOfService />} />
+            <Route path="team" element={<Team />} />
             <Route path="consultation" element={<Consultation />} />
 
             {/*  404 page */}
