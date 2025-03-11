@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaHammer, FaWater, FaCouch, FaPaintRoller, FaTools } from "react-icons/fa";
 import backgroundImage from "/images/kitchen.png"; // Replace with actual image path
-import topImage from "/images/nobg.png"; // Replace with actual image path
+import topImage from "/images/main.jpg"; // Replace with actual image path
 
 const ComprehensivePackage = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const ComprehensivePackage = () => {
             src={topImage}
             alt="Top Image"
             className="img-fluid"
-            style={{ width: "350px", maxWidth: "100%", marginRight: "20px" }}
+            style={{ width: "550px", maxWidth: "100%", marginRight: "20px" }}
           />
           <div className="text-center text-md-start mt-4 mt-md-0">
             <h2 className="fw-bold">Interested in a Comprehensive House Package?</h2>
