@@ -45,7 +45,7 @@ const Header = () => {
                 as={Link}
                 to={path}
                 onClick={handleLinkClick}
-                className={`nav-link-custom ${location.pathname === path ? "active" : ""}`}
+                className={`nav-link-custom px-2 ${location.pathname === path ? "active" : ""}`}
               >
                 {label}
               </Nav.Link>
