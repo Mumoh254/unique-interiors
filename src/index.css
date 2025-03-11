@@ -235,8 +235,8 @@ html{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 24px;
-  width: 30px;
+  height: 20px;
+  width: 18px;
   cursor: pointer;
   
 }
@@ -285,11 +285,11 @@ html{
   font-weight: bold;
   color: var(--navy-blue);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .logo {
-  width: 40px;
+  width: 35px;
   margin-right: 8px;
 }
 
