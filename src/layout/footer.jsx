@@ -15,7 +15,7 @@ const Footer = () => {
       <div
         className="hero-section"
         style={{
-          backgroundImage: `url('/images/footer.png')`,
+          backgroundImage: `url('/images/hose.avif')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

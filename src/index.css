@@ -34,7 +34,63 @@ html{
 
 
 
+.custom-navbar {
+  background: var(--soft-white);
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.brand-logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: var(--navy-blue);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  color: var(--navy-blue);
+}
+
+/* Navbar Links */
+.nav-link-custom {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--navy-blue);
+  padding: 10px 15px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--heavy-orange);
+}
+
+/* Underline Effect */
+.nav-link-custom.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: var(--heavy-orange);
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+/* Call Button */
+.call-btn {
+  background: var(--heavy-orange);
+  color: white !important;
+  padding: 8px;
+}
 
 .layout-container{
   margin-top: 3rem !important;

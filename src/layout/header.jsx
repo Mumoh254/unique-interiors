@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import { Container } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import React, { useState, useCallback } from "react";
+import { Container } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,10 +21,10 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleLinkClick} className="brand-logo">
           <img src="/images/logo.webp" alt="Unique Interiors Logo" className="logo" />
-          Unique Interiors Solutions
+          <span className="logo-text">Unique Interiors Solutions</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={isOpen} onClick={handleToggle}>
-          <div className={`hamburger ${isOpen ? 'open' : ''}`}>
+          <div className={`hamburger ${isOpen ? "open" : ""}`}>
             <span></span>
             <span></span>
             <span></span>
@@ -45,7 +45,7 @@ const Header = () => {
                 as={Link}
                 to={path}
                 onClick={handleLinkClick}
-                className={`nav-link-custom ${location.pathname === path ? 'active' : ''}`}
+                className={`nav-link-custom ${location.pathname === path ? "active" : ""}`}
               >
                 {label}
               </Nav.Link>
