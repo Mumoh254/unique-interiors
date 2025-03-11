@@ -45,12 +45,12 @@ const Header = () => {
                 as={Link}
                 to={path}
                 onClick={handleLinkClick}
-                className={`nav-link-custom px-2 ${location.pathname === path ? "active" : ""}`}
+                className={`nav-link-custom px-3 ${location.pathname === path ? "active" : ""}`}
               >
                 {label}
               </Nav.Link>
             ))}
-            <Nav.Link href="tel:+254710772575" onClick={handleLinkClick} className="nav-link-custom call-btn">
+            <Nav.Link href="tel:+254710772575" onClick={handleLinkClick} className="nav-link-custom px-4 call-btn">
               Call
             </Nav.Link>
           </Nav>
