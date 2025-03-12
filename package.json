@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@restart/hooks": "^0.6.2",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "framer-motion": "^12.4.10",
