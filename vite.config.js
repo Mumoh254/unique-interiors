@@ -5,6 +5,10 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   server: {
-    middlewareMode: 'html', // Ensure fallback works
+    middlewareMode: false, // Remove 'html' mode
+    historyApiFallback: true, // Enable fallback for SPA routing
   },
+  build: {
+    outDir: 'dist', // Ensure output directory is correct
+  }
 });
