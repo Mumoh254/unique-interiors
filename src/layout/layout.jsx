@@ -1,16 +1,14 @@
 import { memo, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { lazy } from 'react';
-const Header = lazy(() => import('./header'));
-const Footer = lazy(() => import('./footer'));
-import LoadingSpinner from '../pages/looder'; // Lightweight fallback for Suspense
+import Header from './header';  // Preload header for faster rendering
+import Footer from './footer';  // Preload footer for better UX
+import LoadingSpinner from '../pages/looder'; // Lightweight fallback
 
 const Layout = () => {
   return (
     <div className="layout-container">
       <Header />
       <main>
-        {/* Lazy load child components */}
         <Suspense fallback={<LoadingSpinner />}>
           <Outlet />
         </Suspense>

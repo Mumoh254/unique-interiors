@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from './layout/layout';
@@ -19,8 +19,22 @@ const ProcessComponent = lazy(() => import('./pages/process'));
 const Team = lazy(() => import('./pages/team'));
 
 function App() {
+
+  useEffect(() => {
+    const preloadRoutes = async () => {
+      await Promise.all([
+        import('./pages/home'),
+        import('./pages/projects'),
+        import('./pages/about'),
+        import('./pages/contact'),  // Preload Contact page
+   
+      ]);
+    };
+    preloadRoutes();
+  }, []);
+  
   return (
-    <Suspense fallback={<LoadingSpinner />}> 
+    <Suspense fallback={<LoadingSpinner />}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -35,8 +49,6 @@ function App() {
           <Route path="terms" element={<TermsOfService />} />
           <Route path="team" element={<Team />} />
           <Route path="consultation" element={<Consultation />} />
-
-          {/* 404 page */}
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

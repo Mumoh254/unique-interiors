@@ -37,30 +37,22 @@ const FAQ = () => {
     }
   ];
 
+  const toggleAccordion = (index) => {
+    setActiveKey(activeKey === index.toString() ? null : index.toString());
+  };
+
   return (
     <section className="faq-section">
       <Container>
-        <h2 className="faq-heading text-start mb-5">
-          Frequently Asked Questions
-        </h2>
+        <h2 className="faq-heading text-start mb-5">Frequently Asked Questions</h2>
         <Accordion activeKey={activeKey} style={{ maxWidth: '800px', margin: '0 auto' }}>
           {faqs.map((faq, index) => (
-            <Accordion.Item 
-              key={index} 
-              eventKey={index.toString()}
-              className="faq-item"
-            >
-              <Accordion.Header 
-                onClick={() => setActiveKey(activeKey === index.toString() ? null : index.toString())}
-                className="faq-header"
-              >
+            <Accordion.Item key={index} eventKey={index.toString()} className="faq-item">
+              <Accordion.Header onClick={() => toggleAccordion(index)} className="faq-header">
                 <div className="d-flex justify-content-between w-100 pe-3">
                   <h5>{faq.question}</h5>
                   <span className="icon">
-                    {activeKey === index.toString() ? 
-                      <FiChevronUp /> : 
-                      <FiChevronDown />
-                    }
+                    {activeKey === index.toString() ? <FiChevronUp /> : <FiChevronDown />}
                   </span>
                 </div>
               </Accordion.Header>

@@ -25,19 +25,20 @@ const Home = () => {
       <div className="home-container">
         <div className="video-overlay"></div>
         <video 
-          autoPlay 
-          loop
-          muted 
-          playsInline 
-          className="background-video" 
-          preload="metadata" // Changed to metadata for better performance
-          poster="/images/kitchen.jpg" // Ensure this image is optimized
-          width="100%" // Set width to prevent layout shifts
-          height="auto" // Set height to maintain aspect ratio
-        >
-          <source src="/videos/comp.mp4" type="video/mp4" />
-        </video>
-
+    autoPlay 
+    loop
+    muted 
+    playsInline 
+    className="background-video" 
+    preload="metadata"  // Consider changing to "auto" if necessary
+    poster="/images/kitchen.webp"  // Use an optimized image format
+    width="100%"  
+    height="auto"  
+    style={{ objectFit: 'cover' }}  
+>
+    <source src="/videos/video.mp4" type="video/mp4" />  // Ensure this video is optimized
+    Your browser does not support the video tag.
+</video>
         <div className="content-overlay">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

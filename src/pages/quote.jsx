@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 import { FaPaperPlane } from "react-icons/fa";
 
 const countiesInKenya = [
