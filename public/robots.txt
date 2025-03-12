@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /  
+Allow: /contacts
+Allow: /about
+Allow: /projects
+
+Disallow: /terms
+Disallow: /team
+Disallow: /cookie-policy
+
+Sitemap: https://uniqueinteriors.netlify.app/sitemap.xml
