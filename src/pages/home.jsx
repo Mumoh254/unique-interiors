@@ -1,15 +1,13 @@
 import React, { lazy, Suspense, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import  ComprehensivePackage  from './comprehensive'
-import   ProjectTypes  from './types'
+import ComprehensivePackage from './comprehensive';
+import ProjectTypes from './types';
+
 // Lazy load less important components
 const Testimonials = lazy(() => import('./testmonials')); // Lazy load Testimonials component
 const FAQ = lazy(() => import('./faq')); // Lazy load FAQ component
-
-// Immediately load essential components
 const WhatsAppWidget = lazy(() => import('../widgets/watsapp')); // Lazy load WhatsApp widget
-// const ProjectTypes = lazy(() => import('./types')); // Lazy load Project Types component
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,19 +23,20 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
-        <div className="video-overlay">  </div>
+        <div className="video-overlay"></div>
         <video 
-  autoPlay 
-  loop
-  muted 
-  playsInline 
-  className="background-video" 
-  preload="none" 
-  poster="/images/kitchen.jpg"
->
-  <source src="/videos/comp.mp4" type="video/mp4" />
-</video>
-
+          autoPlay 
+          loop
+          muted 
+          playsInline 
+          className="background-video" 
+          preload="metadata" // Changed to metadata for better performance
+          poster="/images/kitchen.jpg" // Ensure this image is optimized
+          width="100%" // Set width to prevent layout shifts
+          height="auto" // Set height to maintain aspect ratio
+        >
+          <source src="/videos/comp.mp4" type="video/mp4" />
+        </video>
 
         <div className="content-overlay">
           <motion.div
@@ -77,8 +76,8 @@ const Home = () => {
         </div>
       </div>
 
-<ComprehensivePackage />
-  
+      <ComprehensivePackage />
+
       <Suspense fallback={<div>Loading WhatsApp Widget...</div>}>
         <WhatsAppWidget />
       </Suspense>
@@ -87,22 +86,15 @@ const Home = () => {
         <ProjectTypes />
       </Suspense>
 
-    
       <Suspense fallback={<div>Loading Testimonials...</div>}>
         <Testimonials />
       </Suspense>
 
       <Suspense fallback={<div>Loading FAQ...</div>}>
         <FAQ />
-
-
       </Suspense>
-      
-
     </>
-
   );
-
 };
 
 export default Home;
