@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import {  Routes, Route, Navigate } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import Layout from './layout/layout';
 import LoadingSpinner from './pages/looder'; 
@@ -22,7 +22,7 @@ const Team  =  lazy(() => import('./pages/team') )
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
    
       <Suspense fallback={<LoadingSpinner />}> 
       <ScrollToTop />
@@ -48,7 +48,7 @@ function App() {
 
       </Suspense>
   
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
