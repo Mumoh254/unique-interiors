@@ -68,8 +68,8 @@ const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/process">Our Process</Link></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/catalogs">Catalogs</Link></li>
+
+       
               <li><Link to="/consultation">Book Consultation</Link></li>
             </ul>
           </div>
@@ -98,10 +98,11 @@ const Footer = () => {
           <div className="legal-links">
             <Link to="/terms">Terms of Service</Link>
             <Link to="/cookies">Cookie Policy</Link>
-            <Link to="/protected">Protected</Link>
+           
             <Link to="/faq">FAQ</Link>
+
             <Link to="/terms">Warranty</Link>
-            <Link to="/upcoming">Upcoming</Link>
+          
           </div>
           <p className="py-3">
             © {new Date().getFullYear()} Unique Interiors Limited | All rights reserved | Unauthorized duplication or distribution is prohibited.
