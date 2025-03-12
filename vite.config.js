@@ -8,30 +8,39 @@ export default defineConfig({
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 512, 
+      threshold: 5 * 1024, // Compress files larger than 5 KB
       deleteOriginFile: false, 
-
     }),
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
-      threshold: 512, 
-      deleteOriginFile: false,
-     
+      threshold: 5 * 1024, // Compress files larger than 5 KB
+      deleteOriginFile: false, 
       options: {
-        level: 11, 
+        level: 11, // Maximum compression
       },
     }),
   ],
   build: {
+    outDir: 'dist',
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
-        passes: 3, // Number of times to run the compress
+        passes: 3,
       },
       mangle: true,
+    },
+    chunkSizeWarningLimit: 500, // size limit for warnings
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
     },
   },
   server: {
