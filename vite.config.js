@@ -8,23 +8,30 @@ export default defineConfig({
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 512, // Compress files larger than 512 bytes (more aggressive)
+      threshold: 512, 
+      deleteOriginFile: false, 
+
     }),
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
-      threshold: 512, // Brotli compression for better efficiency
+      threshold: 512, 
+      deleteOriginFile: false,
+     
+      options: {
+        level: 11, 
+      },
     }),
   ],
   build: {
-    minify: 'terser', // Further reduces file size
+    minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console logs
-        drop_debugger: true, // Remove debugger
-        passes: 3, // More optimization passes
+        drop_console: true,
+        drop_debugger: true,
+        passes: 3, // Number of times to run the compress
       },
-      mangle: true, // Shorten variable names
+      mangle: true,
     },
   },
   server: {
