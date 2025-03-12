@@ -26,19 +26,19 @@ const ProjectTypes = () => {
       image: '/images/renovation.webp',
     },
     {
-      title: 'Construction',
+      title: 'House Construction',
       description: 'Building robust and sustainable structures from the ground up.',
-      image: '/images/masterbedrooom.webp',
+      image: '/images/construction.avif',
     },
     {
       title: 'Gypsum Works',
       description: 'Crafting elegant and durable gypsum ceilings and partitions.',
-      image: '/images/kitchen.jpg',
+      image: '/images/gypsum.avif',
     },
     {
-      title: 'Floor Tiling',
+      title: 'Floor  & Wall Tiling',
       description: 'Installing beautiful and long-lasting floor tiles for any space.',
-      image: '/images/kitchen3.webp',
+      image: '/images/tiling1.avif',
     },
   ];
 
