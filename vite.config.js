@@ -8,13 +8,13 @@ export default defineConfig({
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 5 * 1024, // Compress files larger than 5 KB
+      threshold: 0, // Compress all files regardless of size
       deleteOriginFile: false, 
     }),
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
-      threshold: 5 * 1024, // Compress files larger than 5 KB
+      threshold: 0, // Compress all files regardless of size
       deleteOriginFile: false, 
       options: {
         level: 11, // Maximum compression

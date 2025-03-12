@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaHammer, FaWater, FaCouch, FaPaintRoller, FaTools } from "react-icons/fa";
-import backgroundImage from "/images/kitchen.jpg"; // Replace with actual image path
-import topBackground from "/images/main.jpg"; // Replace with actual image path
+import { FaHammer, FaWater, FaCouch, FaPaintRoller, FaTools, FaUtensils } from "react-icons/fa"; // Added FaUtensils for kitchen hood & cooker
+import backgroundImage from "/images/kitchen.jpg"; 
+import topBackground from "/images/main.jpg"; 
 
 const ComprehensivePackage = () => {
   const navigate = useNavigate();
@@ -19,12 +19,13 @@ const ComprehensivePackage = () => {
       { icon: <FaCouch />, text: "Custom Cabinets" },
       { icon: <FaPaintRoller />, text: "Tiling & Painting" },
       { icon: <FaTools />, text: "General Maintenance" },
+      { icon: <FaUtensils />, text: "Kitchen Hood & Cooker Fixing" }, // ✅ New service added
     ],
     []
   );
 
   return (
-    <div className="comprehensive-package mt-5 ">
+    <div className="comprehensive-package mt-5">
       {/* Hero Section */}
       <div className="hero-section position-relative text-center text-white d-flex align-items-center justify-content-center">
         <div className="overlay"></div>
@@ -38,7 +39,7 @@ const ComprehensivePackage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="services-section  py-5">
+      <div className="services-section py-5">
         <div className="container text-center">
           <h2 className="fw-bold text-uppercase mb-4">Our House Packages</h2>
           <div className="row justify-content-center">
