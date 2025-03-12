@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Interiors Solutions Ltd | Construction & Renovation Services Kenya</title>
-    <meta name="description" content="Professional construction & renovation services in Kenya - Tiling, kitchen installations, bathrooms, ceilings, house construction. Free consultations & quotations.">
-    <meta name="keywords" content="construction Kenya, home renovations, house tiling, modern kitchen installation, bathroom remodeling, gypsum ceilings, cabro paving">
+    <meta name="description" content="Professional construction & renovation services in Kenya - Tiling, kitchen installations, bathrooms, ceilings, house construction, cookers, kitchen hoods, sinks, pavements.">
+    <meta name="keywords" content="construction Kenya, home renovations, house tiling, modern kitchen installation, bathroom remodeling, gypsum ceilings, cabro paving, kitchen fit-outs, cookers, kitchen sinks, hoods, pavements">
     <meta name="author" content="Nicholas Mwaniki">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Unique Interiors Solutions Ltd | Quality Construction Services Kenya">
-    <meta property="og:description" content="Expert home renovations, tiling, and house construction services across Kenya. Free consultations & quotes.">
+    <meta property="og:description" content="Expert home renovations, tiling, kitchen installations, and house construction services across Kenya. Free consultations & quotes.">
     <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
 
     <!-- Twitter -->
@@ -20,57 +20,14 @@
     <meta name="twitter:description" content="Expert home renovations, tiling services, and house construction. Serving all Kenyan counties with quality craftsmanship.">
     <meta name="twitter:image" content="https://yourdomain.com/images/twitter-card.jpg">
 
-    <!-- Preconnect & DNS Prefetch for Performance -->
-    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
-    <link rel="dns-prefetch" href="https://maps.googleapis.com">
-
-    <!-- Preloading Important Assets -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Funnel+Display:wght@300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" as="style">
+    <!-- Preload Assets -->
     <link rel="preload" href="/videos/video.mp4" as="video">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Unique Interiors Solutions Limited",
-        "image": "https://yourdomain.com/images/logo.png",
-        "url": "https://yourdomain.com",
-        "telephone": "+25410772575",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Nairobi",
-            "addressRegion": "Nairobi",
-            "addressCountry": "KE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -1.286389,
-            "longitude": 36.817223
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "08:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://facebook.com/yourpage",
-            "https://twitter.com/yourprofile",
-            "https://instagram.com/yourprofile",
-            "https://linkedin.com/in/yourprofile"
-        ]
-    }
-    </script>
 
     <link rel="icon" type="image/svg+xml" href="/unique.svg">
 </head>
 <body>
-
     <div id="root"></div>
     
     <!-- Hidden SEO Content -->
@@ -78,35 +35,29 @@
         <h1>Unique Interiors Solutions Limited</h1>
         <h2>Professional Construction & Renovation Services in Kenya</h2>
         <p>Contact CEO Nicholas Mwaniki: +254 107 725 75</p>
-        <p>Service Locations: Nairobi, Nakuru, Kericho, Mombasa, Makueni, Isiolo & all Kenyan counties</p>
         <ul>
             <li>Wall & Floor Tiling</li>
             <li>House Renovations</li>
             <li>Modern Kitchen Installation</li>
+            <li>Cookers, Kitchen Hoods & Sinks Installation</li>
             <li>Bathroom Remodeling</li>
             <li>Gypsum Ceilings</li>
             <li>Cabro Pavements</li>
             <li>Complete House Construction</li>
-            <li>Free Quotations & Consultations</li>
         </ul>
-
-        <p>Follow us on social media:</p>
-        <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Facebook" width="30">
-        </a>
-        <a href="https://youtube.com/yourprofile" target="_blank" aria-label="YouTube">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="YouTube" width="30">
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30">
-        </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" width="30">
-        </a>
     </div>
 
     <!-- Scripts -->
     <script type="module" src="/src/main.jsx"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (document.querySelector('.modal') || document.querySelector('.dropdown') || document.querySelector('.carousel')) {
+                let script = document.createElement('script');
+                script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
+                script.defer = true;
+                document.body.appendChild(script);
+            }
+        });
+    </script>
 </body>
 </html>
