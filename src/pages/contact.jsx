@@ -8,7 +8,7 @@ const ContactInfo = () => (
     <h4 className="mb-3 text-dark">
       <FaMapMarkerAlt aria-label="Location" /> Our Office
     </h4>
-    <p className="text-muted">Nairobi, Kenya</p>
+    <p className="text-muted">Nairobi ,  North  Airport  Road . </p>
     
     <h4 className="mb-3 text-dark">
       <FaEnvelope aria-label="Email" /> Email
@@ -18,7 +18,7 @@ const ContactInfo = () => (
     <h4 className="mb-3 text-dark">
       <FaPhone aria-label="Phone" /> Phone
     </h4>
-    <p className="text-muted">+254740045355</p>
+    <p className="text-muted">+254 -  710 -  772 - 575</p>
   </Card>
 );
 

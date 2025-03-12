@@ -20,7 +20,7 @@ const HeroSection = () => (
     <h1 className="display-4 fw-bold mb-3">
       Crafting Spaces with Passion
       <span className="custom-badge">
-        Since 2020
+        Since 2015
       </span>
     </h1>
     <p className="lead">
