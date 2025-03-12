@@ -10,13 +10,9 @@
     "preview": "vite preview",
     "serve": "vite  preview --spa"
   },
-  "resolutions": {
-  "@restart/hooks": "0.6.2"
-},
-
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@restart/hooks": "^0.6.2",
+    "@restart/hooks": "^0.5.1",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "framer-motion": "^12.4.10",
@@ -30,7 +26,6 @@
     "sweetalert2": "^11.6.13",
     "terser": "^5.39.0",
     "yup": "^1.6.1"
-    
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
