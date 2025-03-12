@@ -6,7 +6,7 @@ import ProjectTypes from './types';
 
 // Lazy load less important components
 const Testimonials = lazy(() => import('./testmonials')); // Lazy load Testimonials component
-const FAQ = lazy(() => import('./faq')); // Lazy load FAQ component
+const FAQ = lazy(() => import('./faq'));
 const WhatsAppWidget = lazy(() => import('../widgets/watsapp')); // Lazy load WhatsApp widget
 
 const Home = () => {
@@ -30,13 +30,13 @@ const Home = () => {
     muted 
     playsInline 
     className="background-video" 
-    preload="metadata"  // Consider changing to "auto" if necessary
-    poster="/images/kitchen.webp"  // Use an optimized image format
+    preload="metadata"  
+    poster="/images/kitchen.webp" 
     width="100%"  
     height="auto"  
     style={{ objectFit: 'cover' }}  
 >
-    <source src="/videos/video.mp4" type="video/mp4" />  // Ensure this video is optimized
+    <source src="/videos/comp.mp4" type="video/mp4" />  // Ensure this video is optimized
     Your browser does not support the video tag.
 </video>
         <div className="content-overlay">

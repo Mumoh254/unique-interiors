@@ -17,6 +17,7 @@ const TermsOfService = lazy(() => import('./pages/terms'));
 const CookiesPolicy = lazy(() => import('./pages/cookies'));
 const ProcessComponent = lazy(() => import('./pages/process'));
 const Team = lazy(() => import('./pages/team'));
+const Careers = lazy(() => import('./pages/careers'));
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         import('./pages/home'),
         import('./pages/projects'),
         import('./pages/about'),
-        import('./pages/contact'),  // Preload Contact page
+        import('./pages/contact'),  
    
       ]);
     };
@@ -45,6 +46,7 @@ function App() {
           <Route path="cookies" element={<CookiesPolicy />} />
           <Route path="process" element={<ProcessComponent />} />
           <Route path="faq" element={<FAQ />} />
+          <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
           <Route path="terms" element={<TermsOfService />} />
           <Route path="team" element={<Team />} />

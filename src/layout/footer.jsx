@@ -68,6 +68,8 @@ const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/process">Our Process</Link></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li><Link to="/careers">Open-Careers</Link></li>
+            
 
        
               <li><Link to="/consultation">Book Consultation</Link></li>
@@ -102,11 +104,14 @@ const Footer = () => {
             <Link to="/faq">FAQ</Link>
 
             <Link to="/terms">Warranty</Link>
+        
           
           </div>
+
           <p className="py-3">
             © {new Date().getFullYear()} Unique Interiors Limited | All rights reserved | Unauthorized duplication or distribution is prohibited.
           </p>
+
         </div>
       </footer>
     </>
