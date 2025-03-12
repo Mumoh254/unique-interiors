@@ -70,7 +70,7 @@ const ProjectTypes = () => {
               <div className="text-overlay position-absolute bottom-0 start-0 w-100 p-4">
                 <h5 className="text-white fw-bold mb-2">{project.title}</h5>
                 <p className="text-white small mb-3">{project.description}</p>
-                <Button size="sm" className="btn-dark" onClick={handleViewProjects}>
+                <Button size="sm" className="btn2" onClick={handleViewProjects}>
                   View More
                 </Button>
               </div>
@@ -87,7 +87,7 @@ const ProjectTypes = () => {
         </div>
 
         {/* View Projects Button */}
-        <Button className="btn-primary" onClick={handleViewProjects}>
+        <Button className="btn2" onClick={handleViewProjects}>
           View Our Recent Projects
         </Button>
       </div>

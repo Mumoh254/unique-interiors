@@ -6,99 +6,163 @@ import SpinnerLoader from "./looder";
 
 
 const projects = [
-  { 
+  {
     id: 1,
-    category: 'Residential',
-    type: 'Renovation',
-    title: 'Modern Apartment Makeover',
-    image: '/images/kitchen.png',
+    category: 'Home',
+    type: 'Kitchen',
+    title: 'Modern Kitchen ',
+    image: '/images/kitchen.jpg',
     year: '2023',
-    excerpt: 'Complete transformation of a 3-bedroom apartment',
-    description: 'A contemporary kitchen renovation in the heart of Nairobi. Perfect for a modern lifestyle.'
+    excerpt: 'Complete transformation of a  Home  kitchen in Nakuru',
+    description: 'A stylish modern kitchen featuring sleek white cabinetry, stainless steel appliances, and an integrated smoke extraction system, perfect for contemporary living in Nairobi.'
   },
-  { 
+  
+  {
     id: 2,
-    category: 'Residential',
+    category: 'Home',
     type: 'Renovation',
-    title: 'Stylish Living Room Redesign',
-    image: '/images/kitchen7.jpg',
+    title: 'Stylish Brown Kitchen with Fridge and Cooker',
+    image: '/images/kitchen6.webp',
     year: '2023',
-    excerpt: 'Stylish redesign of a spacious living room with minimalistic aesthetics.',
-    description: 'A living room that blends comfort and style with sustainable design and quality materials.'
+    excerpt: 'Elegant redesign of a spacious kitchen with modern amenities.',
+    description: 'A chic brown kitchen featuring a sleek fridge and cooker, combining functionality with contemporary style for a warm and inviting space.'
   },
-  { 
+  {
     id: 3,
-    category: 'Residential',
-    type: 'Renovation',
+    category: 'Home',
+    type: 'Master Bedroom',
     title: 'Elegant Bedroom Transformation',
-    image: '/images/kitchen6.jpg',
+    image: '/images/masterbedrooom.webp',
     year: '2024',
     excerpt: 'A serene bedroom renovation with a focus on tranquility and elegance.',
-    description: 'The bedroom was transformed into a relaxing retreat with custom gypsum ceilings and feature lighting.'
+    description: 'This master bedroom features a luxurious bathtub and a stylish side cabinet, creating a relaxing retreat with custom gypsum ceilings and ambient lighting.'
   },
-  { 
+  {
     id: 4,
-    category: 'Residential',
-    type: 'Renovation',
-    title: 'Modern Bathroom Overhaul',
-    image: '/images/kitchen5.jpg',
+    category: 'Home',
+    type: 'Kitchen Making',
+    title: 'Elegant White Kitchen with Tiling',
+    image: '/images/kitchen5.webp',
     year: '2024',
-    excerpt: 'Comprehensive bathroom renovation with sleek finishes and modern amenities.',
-    description: 'From the tiles to the gypsum ceiling, every detail was meticulously chosen to bring serenity.'
+    excerpt: 'Stunning kitchen renovation featuring sleek white finishes and modern tiling.',
+    description: 'This modern kitchen features bright white cabinetry and stylish tiling, creating a fresh and inviting atmosphere perfect for culinary creativity.'
   },
-  { 
+
+  {
     id: 5,
-    category: 'Residential',
+    category: 'Office',
     type: 'Renovation',
-    title: 'Luxury Kitchen Refurbishment',
-    image: '/images/kitchen5.jpg',
+    title: 'Elegant Office Partition with Wooden Flooring',
+    image: '/images/office  partition.webp',
     year: '2025',
-    excerpt: 'High-end kitchen renovation with premium finishes.',
-    description: 'State-of-the-art appliances and sustainable materials were used to create this dream kitchen.'
+    excerpt: 'Stylish office partition featuring premium wooden flooring and modern design.',
+    description: 'This office renovation showcases a sleek partition design complemented by rich wooden flooring, creating a professional and inviting workspace.'
   },
-  { 
+  {
     id: 6,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Mirror & Wardrobe Redesign',
-    image: '/images/mirror.jpg',
+    title: 'Elegant Window Frame with One-Way Mirror',
+    image: '/images/mirror2.webp',
     year: '2024',
-    excerpt: 'A modern redesign of mirror installations and wardrobe solutions.',
-    description: 'Custom-built wardrobes and elegant mirror features that create a sleek, modern feel.'
+    excerpt: 'Stylish window frame design featuring a custom wooden build and one-way mirror.',
+    description: 'This renovation showcases a beautifully crafted wooden window frame with a fixed one-way mirror, enhancing privacy while allowing natural light to fill the space.'
   },
-  { 
+  {
     id: 7,
     category: 'Residential',
     type: 'Renovation',
-    title: 'Chic Wardrobe & Storage Solutions',
-    image: '/images/wardrobe.jpg',
+    title: 'Stylish Outdoor Cabros Fitting',
+    image: '/images/cabros.webp',
     year: '2023',
-    excerpt: 'Efficient use of space with stylish wardrobe and storage solutions.',
-    description: 'Incorporating gypsum ceiling work and tailored storage options to maximize space.'
+    excerpt: 'Elegant outdoor cabros installation enhancing functionality and aesthetics.',
+    description: 'This renovation features a beautifully laid cabros design, providing a durable and attractive outdoor surface that complements the surrounding landscape.'
   },
-  { 
+  {
     id: 8,
-    category: 'Residential',
+    category: 'comercial',
     type: 'Renovation',
-    title: 'Luxury Kitchen Overhaul',
-    image: '/images/kitchen4.jpg',
+    title: 'Charming Outdoor Cafe Space',
+    image: '/images/outdoor.jpg',
     year: '2023',
-    excerpt: 'Transforming an outdated kitchen into a luxurious culinary space.',
-    description: 'Incorporating top-of-the-line appliances, quartz countertops, and stylish pavements.'
+    excerpt: 'Revitalizing an outdoor cafe area for a welcoming dining experience.',
+    description: 'This renovation features stylish seating, vibrant landscaping, and elegant pavements, creating an inviting atmosphere for patrons to enjoy their meals al fresco.'
   },
-  { 
+  {
     id: 9,
-    category: 'Commercial',
-    type: 'Office',
-    title: 'Corporate Office Design',
-    image: '/images/kitchen3.jpg',
+    category: 'Tiling',
+    type: 'Tiling',
+    title: 'Elegant Bathroom Tiling',
+    image: '/images/tiles.webp',
     year: '2023',
-    excerpt: '2000 sq ft office space redesign.',
-    description: 'A sleek and modern office space that promotes productivity and creativity.'
+    excerpt: 'Stylish floor and wall tiling for a modern bathroom renovation.',
+    description: 'This project features high-quality tiles on both the floor and walls, creating a sleek and contemporary look that enhances the overall aesthetic of the bathroom.'
+  },
+  {
+    id: 10,
+    category: 'Home',
+    type: 'Renovation',
+    title: 'Sleek Wall-Mounted Kitchen Hood',
+    image: '/images/kitchenhood.webp',
+    year: '2023',
+    excerpt: 'Modern wall-mounted kitchen hood for enhanced cooking efficiency.',
+    description: 'This stylish wall-mounted kitchen hood combines functionality and design, effectively removing smoke and odors while adding a contemporary touch to the kitchen decor.'
+  },
+  {
+    id: 11,
+    category: 'Home',
+    type: 'Renovation',
+    title: 'Sleek Kitchen Oven',
+    image: '/images/oven.webp',
+    year: '2023',
+    excerpt: 'Modern wall-mounted kitchen hood for enhanced cooking efficiency.',
+    description: 'This stylish wall-mounted kitchen hood combines functionality and design, effectively removing smoke and odors while adding a contemporary touch to the kitchen decor.'
+  },
+  {
+    id: 12,
+    category: 'Gypsum',
+    type: 'Renovation',
+    title: 'Elegant Gypsum Ceiling Installation',
+    image: '/images/gypsum.avif',
+    year: '2023',
+    excerpt: 'Stylish gypsum ceiling design for a modern living space.',
+    description: 'This renovation features a beautifully crafted gypsum ceiling that enhances the aesthetic appeal of the room while providing a sleek and contemporary finish.'
   }
+,
+{
+  id: 13,
+  category: 'Cabinets',
+  type: 'Renovation',
+  title: 'Stylish Cabinets and Wardrobe Solutions',
+  image: '/images/cabinetts.jpg',
+  year: '2023',
+  excerpt: 'Modern cabinets and wardrobes designed for optimal storage and style.',
+  description: 'This features custom-built cabinets and wardrobes that maximize storage space while adding a touch of elegance to the room. The sleek design and high-quality materials create a functional yet stylish solution for organizing clothes and accessories.'
+},
+{
+  id: 15,
+  category: 'Tiling',
+  type: 'Renovation',
+  title: 'Elegant Tiled Staircase with Ambient Lighting',
+  image: '/images/saircase.jpg',
+  year: '2023',
+  excerpt: 'Stylish staircase renovation featuring beautiful tiling and modern lighting.',
+  description: 'This renovation showcases a stunning tiled staircase complemented by ambient lighting, creating a warm and inviting atmosphere. The combination of high-quality tiles and strategically placed lights enhances both safety and aesthetic appeal, making the staircase a focal point of the home.'
+},
+{
+  id: 9,
+  category: 'Office',
+  type: 'Renovation',
+  title: 'Elegant Office Reception Area',
+  image: '/images/whiteoffice.jpg',
+  year: '2023',
+  excerpt: 'Modern reception design featuring stylish cabinets and organizational solutions.',
+  description: 'This renovation showcases custom-built cabinets and reception furniture that maximize storage while enhancing the professional aesthetic of the office. The sleek design and high-quality materials create a welcoming and functional space for clients and visitors, ensuring an impressive first impression.'
+}
+
 ];
 
-const categories = ['All', 'Residential', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum', 'Pavements'];
+const categories = ['All', 'Home', 'Commercial', 'Office', 'Renovation', 'Tiling', 'Gypsum', 'Cabinets'];
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(false);
@@ -158,7 +222,7 @@ export default function Projects() {
                       </div>
                     </div>
                     <Card.Body>
-                      <Card.Title>{project.title}</Card.Title>
+                      <Card.Title style={{ color: 'var(--navy-blue)' , fontWeight: "600"}} >{project.title}</Card.Title>
                       <Card.Text>{project.excerpt}</Card.Text>
                       <p>{project.description}</p>
                     </Card.Body>
