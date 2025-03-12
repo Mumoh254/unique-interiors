@@ -16,7 +16,15 @@
   --soft-white: #f8f9fa;
   --dark-overlay: rgba(10, 25, 47, 0.85);
 }
-
+.color{
+  color: "var(--navy-blue)  "
+}
+.background{
+  background-color: var(--navy-blue)  !important;
+}
+.wh{
+  color:  var(--soft-white)   !important;
+}
 /*   basit  subset  start */
 body{
 
@@ -34,67 +42,66 @@ html{
 
 
 .layout-container {
-  margin-top: 3rem; /* Removed !important for better maintainability */
-  max-height: fit-content; /* Consider using max-height: none; if fit-content is not supported */
+  margin-top: 3rem; 
+  max-height: fit-content;
 }
-
 /* Home Container */
 .home-container {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  overflow: hidden; /* Hide overflow to prevent scrollbars */
-  will-change: transform, opacity; /* Hint to the browser for optimization */
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  will-change: transform, opacity; 
 }
 
 .video-overlay {
-  position: absolute; /* Overlay on top of the video */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(6, 6, 29, 0.26); /* Semi-transparent overlay */
-  z-index: 1; /* Ensure overlay is above the video */
+  background: rgba(6, 6, 29, 0.26); 
+  z-index: 1; 
 }
 
 .background-video {
-  position: absolute; /* Position video to fill the container */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire area without distortion */
-  z-index: 0; /* Ensure video is behind the overlay */
+  object-fit: cover; 
+  z-index: 0;
 }
 
 /* Content Overlay */
 .content-overlay {
-  position: relative; /* Position relative to allow z-index stacking */
-  z-index: 2; /* Ensure content is above the overlay */
-  text-align: center; /* Center text */
-  color: var(--soft-white); /* Use CSS variable for color */
-  padding: 0 1rem; /* Responsive padding */
+  position: relative; 
+  z-index: 2; 
+  text-align: center; 
+  color: var(--soft-white); 
+  padding: 0 1rem; 
 }
 
 .main-heading {
-  font-size: 3.5rem; /* Large font size for main heading */
-  font-weight: 700; /* Bold font weight */
-  line-height: 1.2; /* Line height for readability */
-  margin-bottom: 1.5rem; /* Space below heading */
-  font-family: system-ui, sans-serif; /* System font for better performance */
-  font-display: swap; /* Improve loading performance */
-  will-change: transform; /* Hint for optimization */
+  font-size: 3.5rem; 
+  font-weight: 700; 
+  line-height: 1.2; 
+  margin-bottom: 1.5rem; 
+  font-family: system-ui, sans-serif; 
+  font-display: swap; 
+  will-change: transform; 
 }
 
 .sub-text {
-  font-size: 1.5rem; /* Font size for subtext */
-  font-weight: 400; /* Normal font weight */
-  margin-bottom: 2rem; /* Space below subtext */
-  font-family: system-ui, sans-serif; /* System font for better performance */
-  font-display: swap; /* Improve loading performance */
-  will-change: transform; /* Hint for optimization */
+  font-size: 1.5rem; 
+  font-weight: 400; 
+  margin-bottom: 2rem; 
+  font-family: system-ui, sans-serif; 
+  font-display: swap; 
+  will-change: transform; 
 }
 
 .button-group {
@@ -1834,11 +1841,24 @@ html{
 
 
  .team-image {
-  width: 120px !important;  /* Adjust size as needed */
-  height: 120px !important; /* Ensure consistency */
-  object-fit: cover; /* Ensures the image maintains aspect ratio */
-  border-radius: 50%; /* Makes it circular */
-  border: 4px solid #007bff; /* Adjust border color */
+  width: 120px !important; 
+  height: 120px !important; 
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 4px solid #007bff;
   display: block;
-  margin: 0 auto 16px auto; /* Centers the image */
+  margin: 0 auto 16px auto; 
+}
+
+
+/* custom  badge */
+.custom-badge {
+  font-size: 1.2rem;
+  background-color:   var(--navy-blue) !important; 
+  color: white;
+  margin-top: 1rem;
+  padding: 2rem 8rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-left: 10px;
 }

@@ -85,7 +85,7 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="social-icons">
-              <Suspense fallback={<span>🔗</span>}><a href="#"><FaFacebook /></a></Suspense>
+              <Suspense fallback={<span>🔗</span>}><a href="https://www.facebook.com/share/1AR5WRjHPb/"><FaFacebook /></a></Suspense>
               <Suspense fallback={<span>🔗</span>}><a href="#"><FaInstagram /></a></Suspense>
               <Suspense fallback={<span>🔗</span>}><a href="#"><FaPinterest /></a></Suspense>
               <Suspense fallback={<span>🔗</span>}><a href="#"><FaLinkedin /></a></Suspense>

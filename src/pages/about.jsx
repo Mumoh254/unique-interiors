@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Container, Row, Col, Badge, Card } from "react-bootstrap";
-import LoadingSpinner from "./looder"; // Ensure correct filename
+import LoadingSpinner from "./looder"; 
 
 import { FiCheck, FiAward, FiUsers, FiHome } from "react-icons/fi";
 
@@ -15,21 +15,23 @@ const About = () => (
 );
 
 const HeroSection = () => (
-  <Row className="justify-content-center mb-5 text-center">
-    <Col xs={12}>
-      <h1 className="display-4 fw-bold mb-3 ">
-        Crafting Spaces with Passion
-        <Badge bg="warning" className="ms-2">Since 2020</Badge>
-      </h1>
-      <p className="lead ">
-        Nairobi's Premier Interior Design Studio Transforming Visions into Reality
-      </p>
-    </Col>
-  </Row>
+  <Row className="justify-content-center mb-5">
+  <Col xs={12}>
+    <h1 className="display-4 fw-bold mb-3">
+      Crafting Spaces with Passion
+      <span className="custom-badge">
+        Since 2020
+      </span>
+    </h1>
+    <p className="lead">
+      Nairobi's Premier Interior Design Studio Transforming Visions into Reality
+    </p>
+  </Col>
+</Row>
 );
 
 const AboutContent = () => (
-  <Row className="g-5 align-items-center mb-5">
+  <Row className="g-5 align-items-start mb-5">
     <Col lg={12}>
       <div className="ps-lg-4">
         <SectionHeading icon={<FiHome />} title="Redefining Interior Spaces in Nairobi" />
@@ -45,7 +47,7 @@ const AboutContent = () => (
 );
 
 const SectionHeading = ({ icon, title }) => (
-  <h2 className="fw-bold mb-4 text-danger">
+  <h2 className="fw-bold mb-4 ">
     {icon} {title}
   </h2>
 );
@@ -54,8 +56,8 @@ const ExpertiseGrid = () => (
   <Row className="g-4 mb-4">
     {["Residential Transformations", "Commercial Design Solutions"].map((item) => (
       <Col md={6} key={item}>
-        <div className="d-flex align-items-center p-3 rounded-3 shadow-sm bg-dark text-light">
-          <FiCheck className="text-warning me-3 fs-4" />
+        <div className="d-flex align-items-center p-3 rounded-3 shadow-sm bg text-light">
+          <FiCheck className="me-3 fs-4" />
           <span>{item}</span>
         </div>
       </Col>
@@ -63,7 +65,7 @@ const ExpertiseGrid = () => (
   </Row>
 );
 
-// ✅ Added missing `designPhilosophyItems`
+
 const designPhilosophyItems = [
   { title: "Client-Centric Approach", content: "We listen to our clients to tailor unique spaces that fit their needs." },
   { title: "Sustainability & Innovation", content: "We incorporate eco-friendly materials and the latest design trends." },
@@ -83,7 +85,7 @@ const DesignPhilosophy = () => (
 );
 
 const PhilosophyCard = ({ title, content }) => (
-  <Card className="h-100 border-0 shadow-sm bg text-light">
+  <Card className="h-100 border-0 shadow-sm bg wh ">
     <Card.Body>
       <h5 className="fw-bold mb-3 text-warning">{title}</h5>
       <p>{content}</p>
@@ -91,7 +93,7 @@ const PhilosophyCard = ({ title, content }) => (
   </Card>
 );
 
-// ✅ Added missing `AchievementsList`
+
 const AchievementsList = () => (
   <Row className="g-4">
     {[
@@ -99,7 +101,7 @@ const AchievementsList = () => (
       { icon: <FiUsers className="text-warning fs-3" />, text: "Over 500+ Happy Clients" },
     ].map((item, index) => (
       <Col md={6} key={index}>
-        <div className="d-flex align-items-center p-3 rounded-3 shadow-sm bg-dark text-light">
+        <div className="d-flex align-items-center p-3 rounded-3 shadow-sm bg text-light">
           {item.icon}
           <span className="ms-3">{item.text}</span>
         </div>
