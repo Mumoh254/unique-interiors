@@ -9,43 +9,44 @@ export default defineConfig({
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 0, // Compress all files 
-      deleteOriginFile: false, 
+      threshold: 512, // Compress files larger than 512 bytes
+      deleteOriginFile: false,
     }),
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
-      threshold: 0,
-      deleteOriginFile: false, 
+      threshold: 512, // Compress files larger than 512 bytes
+      deleteOriginFile: false,
       options: {
-        level: 11,
+        level: 11, // Maximum compression
       },
     }),
-    visualizer({ open: true }), 
+    visualizer({ open: true }), // Visualize the bundle size
   ],
   build: {
     outDir: 'dist',
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: true, // Remove console logs in production
         drop_debugger: true,
-        passes: 3, 
+        passes: 3,
       },
       mangle: true,
     },
-    chunkSizeWarningLimit: 500, 
+    chunkSizeWarningLimit: 500, // Set a warning limit for chunk sizes
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return 'vendor'; 
+            return 'vendor'; // Separate vendor code into its own chunk
           }
+          // Further chunking logic can be added here
         },
       },
     },
   },
   server: {
-    historyApiFallback: true, // Handle client  routing
+    historyApiFallback: true, // Handle client-side routing
   },
 });
