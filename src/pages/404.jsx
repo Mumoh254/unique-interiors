@@ -12,7 +12,7 @@ const NotFound = () => {
           go back to the homepage.
         </p>
 
-        <Link to="/" style={styles.button}>Back to Home</Link>
+        <Link to="/" className='btn2' >Back to Home</Link>
       </div>
       <footer style={styles.footer}>
         <p> Sorry, we don't have the page you're looking for. </p>
