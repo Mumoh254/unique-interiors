@@ -15,10 +15,10 @@ export default defineConfig({
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
-      threshold: 512, // Compress files larger than 512 bytes
+      threshold: 512,
       deleteOriginFile: false,
       options: {
-        level: 11, // Maximum compression
+        level: 11,
       },
     }),
     visualizer({ open: true }), // Visualize the bundle size
@@ -28,20 +28,19 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console logs in production
+        drop_console: true,
         drop_debugger: true,
         passes: 3,
       },
       mangle: true,
     },
-    chunkSizeWarningLimit: 500, // Set a warning limit for chunk sizes
+    chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
             return 'vendor'; // Separate vendor code into its own chunk
           }
-          // Further chunking logic can be added here
         },
       },
     },
