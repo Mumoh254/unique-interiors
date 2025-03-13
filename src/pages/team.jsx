@@ -68,21 +68,21 @@ const Team = () => {
                   </div>
                   <Card.Body className="py-4">
                     <Card.Title className="fs-5 fw-bold mb-2">{member.name}</Card.Title>
-                    <Card.Text className="text-muted small">{member.role}</Card.Text>
-                    <div className="d-flex justify-content-center gap-3 mt-3">
-                      <a href={member.socials.facebook} className="text-decoration-none text-primary">
+                    <Card.Text className=" small">{member.role}</Card.Text>
+                    <div className=" m-3 justify-content-center gap-3 mt-3">
+                      <a href={member.socials.facebook} className="text-decoration-none m-2 text-primary">
                         <FaFacebook size={20} />
                       </a>
-                      <a href={member.socials.twitter} className="text-decoration-none text-info">
+                      <a href={member.socials.twitter} className="text-decoration-none m-2 text-info">
                         <FaTwitter size={20} />
                       </a>
-                      <a href={member.socials.linkedin} className="text-decoration-none text-primary">
+                      <a href={member.socials.linkedin} className="text-decoration-none m-2 text-primary">
                         <FaLinkedin size={20} />
                       </a>
-                      <a href={member.socials.youtube} className="text-decoration-none text-danger">
+                      <a href={member.socials.youtube} className="text-decoration-none  m-2 text-danger">
                         <FaYoutube size={20} />
                       </a>
-                      <a href={member.socials.instagram} className="text-decoration-none text-danger">
+                      <a href={member.socials.instagram} className="text-decoration-none  m-2 text-danger">
                         <FaInstagram size={20} />
                       </a>
                     </div>
