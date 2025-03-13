@@ -18,6 +18,7 @@ const CookiesPolicy = lazy(() => import('./pages/cookies'));
 const ProcessComponent = lazy(() => import('./pages/process'));
 const Team = lazy(() => import('./pages/team'));
 const Careers = lazy(() => import('./pages/careers'));
+const Warranty = lazy(() => import('./pages/warranty'));
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="terms" element={<TermsOfService />} />
           <Route path="team" element={<Team />} />
+          <Route path="warranty" element={<Warranty />} />
           <Route path="consultation" element={<Consultation />} />
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -103,7 +103,7 @@ const Footer = () => {
            
             <Link to="/faq">FAQ</Link>
 
-            <Link to="/terms">Warranty</Link>
+            <Link to="/warranty">Warranty</Link>
         
           
           </div>
