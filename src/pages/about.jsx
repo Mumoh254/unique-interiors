@@ -14,12 +14,13 @@ const About = () => (
 );
 
 const HeroSection = () => (
-  <Row className="justify-content-center text-center mb-5">
+  <Row className="justify-content-center  mb-5">
     <Col xs={12}>
       <h1 className="display-4 fw-bold mb-3 text-dark">
         Crafting Spaces with Passion
       </h1>
-      <p className="lead text-muted">
+      <button className="btn2 px-5 py-2" >Since 2015</button>
+      <p className="lead ">
         Nairobi's Premier Interior Design Studio Transforming Visions into Reality
       </p>
     </Col>
@@ -41,7 +42,7 @@ const AboutContent = () => (
 );
 
 const SectionHeading = ({ icon, title }) => (
-  <h2 className="fw-bold mb-4 text-primary d-flex align-items-center justify-content-center">
+  <h2 className="fw-bold mb-4  d-flex align-items-center justify-content-center">
     {icon} <span className="ms-2">{title}</span>
   </h2>
 );
@@ -50,8 +51,8 @@ const ExpertiseGrid = () => (
   <Row className="g-4 mb-4">
     {["Residential Transformations", "Commercial Design Solutions"].map((item) => (
       <Col md={6} key={item}>
-        <Card className="p-3 shadow-sm border-0 bg-white text-dark text-center">
-          <FiCheck className="text-primary fs-3 mb-2" />
+        <Card className="p-3 bg shadow-sm border-0  text-white text-center">
+          <FiCheck className="bg fs-3 mb-2" />
           <h5>{item}</h5>
         </Card>
       </Col>
@@ -78,16 +79,16 @@ const designPhilosophyItems = [
 ];
 
 const PhilosophyCard = ({ title, content }) => (
-  <Card className="h-100 border-0 shadow-sm p-3 bg-light text-center">
+  <Card className="h-100 border-0 shadow-sm   p-3 bg text-center">
     <Card.Body>
-      <h5 className="fw-bold text-primary mb-3">{title}</h5>
-      <p className="text-muted">{content}</p>
+      <h5 className="fw-bold  text-white mb-3">{title}</h5>
+      <p className="text-white">{content}</p>
     </Card.Body>
   </Card>
 );
 
 const AchievementsList = () => (
-  <Row className="g-4 text-center">
+  <Row className="g-4 text-center bg p-5">
     {[ 
       { icon: <FiAward className="text-warning fs-3" />, text: "Awarded Best Interior Designers 2023" },
       { icon: <FiUsers className="text-warning fs-3" />, text: "Over 500+ Happy Clients" },
